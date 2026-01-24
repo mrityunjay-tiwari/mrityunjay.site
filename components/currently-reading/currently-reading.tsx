@@ -41,7 +41,13 @@ export default function CurrentlyReading() {
     complete(prompt);
   };
   return (
-    <div className="w-[650px] p-3.5 flex flex-col items-start my-16 rounded-lg shadow-[inset_0_2px_6px_rgba(0,0,0,0.12)] border">
+    <motion.div
+      initial={{opacity: 0, y: 25}}
+      whileInView={{opacity: 1, y: 0}}
+      viewport={{once: true, amount: 0.05}}
+      transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
+      className="md:max-w-2xl w-full p-3.5 flex flex-col items-start my-16 rounded-lg shadow-[inset_0_2px_6px_rgba(0,0,0,0.12)] border"
+    >
       <div className="w-full flex items-center justify-between">
         <div className="flex gap-2.5 items-center">
           <div className="rounded shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] p-0.5 border">
@@ -159,6 +165,6 @@ export default function CurrentlyReading() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }

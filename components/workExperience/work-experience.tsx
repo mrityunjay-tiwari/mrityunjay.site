@@ -12,6 +12,7 @@ import {PiLinkedinLogoLight} from "react-icons/pi";
 import {ChevronDownIcon} from "../hover-icons/down";
 import {useState} from "react";
 import {AnimatePresence, motion} from "motion/react";
+import SectionTitle from "../tech-stack/sectionTitle";
 
 const marker = Fraunces({
   variable: "--font-shadow",
@@ -22,21 +23,16 @@ const marker = Fraunces({
 export default function WorkExperience() {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="w-[650px] flex flex-col items-start justify-start mb-14">
-      <div>
-        <h2 className={cn(`${sans.className} text-sm text-neutral-400`)}>
-          featured
-        </h2>
-        <h2
-          className={cn(
-            `${marker.className} text-2xl text-neutral-500 border-b-4 border-orange-100`,
-          )}
-        >
-          experience.
-        </h2>
-      </div>
+    <div className="md:max-w-2xl w-full flex flex-col items-start justify-start mb-14">
+      <SectionTitle subtitle="featured" title="experience." />
       <div className="w-full flex items-center justify-between mt-5">
-        <div className="flex gap-2.5 items-center">
+        <motion.div
+          initial={{opacity: 0, y: 25}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, amount: 0.05}}
+          transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
+          className="flex gap-2.5 items-center"
+        >
           <div className="rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] p-1 border">
             <Image
               src={"https://ik.imagekit.io/mrityunjay/afi.jpg"}
@@ -94,7 +90,7 @@ export default function WorkExperience() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{expanded ? "Collapse": "Expand"}</p>
+                  <p>{expanded ? "Collapse" : "Expand"}</p>
                 </TooltipContent>
               </Tooltip>
             </div>
@@ -102,15 +98,21 @@ export default function WorkExperience() {
               TechPM Intern
             </h2>
           </div>
-        </div>
-        <div className="flex flex-col items-end">
+        </motion.div>
+        <motion.div
+          initial={{opacity: 0, y: 25}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, amount: 0.05}}
+          transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
+          className="flex flex-col items-end"
+        >
           <h2 className={cn(`${sans.className} text-sm text-neutral-500`)}>
             May 2025 - July 2025
           </h2>
           <h2 className={cn(`${sans.className} text-sm text-neutral-500`)}>
             (Remote)
           </h2>
-        </div>
+        </motion.div>
       </div>
       <AnimatePresence initial={false}>
         {expanded && (

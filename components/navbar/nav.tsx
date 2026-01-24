@@ -11,8 +11,8 @@ import {SearchBox} from "./searchbox";
 import {Inter} from "next/font/google";
 
 const menuItems = [
-  {name: "Projects", href: "#link"},
-  {name: "Blogs", href: "#link"},
+  {name: "Projects", href: "/projects"},
+  {name: "Blogs", href: "/blogs"},
   {name: "My Story", href: "#link"},
 ];
 
@@ -44,7 +44,7 @@ export const Navbar = () => {
           scrolled && "bg-background/40 backdrop-blur-3xl",
         )}
       >
-        <div className="mx-auto w-[700px] px-6 transition-all duration-300">
+        <div className="mx-auto w-full md:max-w-2xl transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link

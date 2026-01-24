@@ -21,7 +21,7 @@ const sans = Inter({
 
 export default function Newsletter () {
     return (
-        <Card className="bg-neutral-950 flex flex-col items-center gap-3 max-w-[600px]">
+        <Card className="justify-self-center text-center bg-neutral-950 flex flex-col items-center gap-3 md:max-w-xl w-full">
             <div className="rounded-full p-2.5 hover:cursor-pointer hover:transition-all hover:duration-300 bg-neutral-800 text-white"><CoffeeIcon /></div>
             <div className={cn(`text-white text-2xl ${marker.className}`)}>Want updates from me?</div>
             <div className={cn(`text-white text-sm justify-self-center text-center px-24 ${sans.className}`)}>I occasionally send out an email with updates about my journey or when I have an interesting story to share.</div>

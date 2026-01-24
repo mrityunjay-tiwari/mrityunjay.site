@@ -7,6 +7,8 @@ import Link from "next/link";
 import { ChevronDownIcon } from "../hover-icons/down";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import {motion} from "motion/react";
+import SectionTitle from "./sectionTitle";
 
 const marker = Fraunces({
   variable: "--font-shadow",
@@ -113,17 +115,26 @@ export default function TechStack() {
     const [expanded, setExpanded] = useState(false);
     const visibleStack = expanded ? stack : stack.slice(0, INITIAL_COUNT);
   return (
-    <div className="w-[650px] flex flex-col items-start justify-start mt-2 gap-2 md:pr-[50px]">
+    <div className="md:w-2xl w-full flex flex-col items-start justify-start mt-2 gap-2 md:pr-[50px]">
       <div className="w-full flex items-center justify-between">
-        <h2
+        {/* <motion.h2
+        initial={{opacity: 0, y: 25}}
+        whileInView={{opacity: 1, y: 0}}
+        viewport={{once: true, amount: 0.3}}
+        transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
         className={cn(
           `${marker.className} text-2xl text-neutral-500 border-b-4 border-orange-100`,
         )}
       >
         my tech stack.
-      </h2>
+      </motion.h2> */}
+      <SectionTitle title="my tech stack." />
       {/* <div className="text-sm text-neutral-500 flex gap-1 items-center cursor-pointer">more<ChevronDownIcon size={12} /></div> */}
-      <div
+      <motion.div
+      initial={{opacity: 0, y: 25}}
+      whileInView={{opacity: 1, y: 0}}
+      viewport={{once: true, amount: 0.3}}
+      transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
           onClick={() => setExpanded((v) => !v)}
           className={cn(`text-xs text-neutral-400 flex gap-0.5 items-center cursor-pointer hover:text-neutral-700 transition ${sans.className}`)}
         >
@@ -135,9 +146,13 @@ export default function TechStack() {
               expanded && "rotate-180"
             )}
           />
-        </div>
+        </motion.div>
       </div>
-      <div
+      <motion.div
+      initial={{opacity: 0, y: 25}}
+      whileInView={{opacity: 1, y: 0}}
+      viewport={{once: true, amount: 0.05}}
+      transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
         className={cn(
           `flex flex-wrap gap-3.5 text-neutral-500 ${sans.className}`,
         )}
@@ -156,7 +171,7 @@ export default function TechStack() {
             </div>
           </Link>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

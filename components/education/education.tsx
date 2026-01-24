@@ -8,21 +8,13 @@ import {CiGlobe} from "react-icons/ci";
 import {useState} from "react";
 import {ChevronDownIcon} from "../hover-icons/down";
 import {AnimatePresence, motion} from "motion/react";
+import SectionTitle from "../tech-stack/sectionTitle";
 
 export default function Education() {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="w-[650px] flex flex-col items-start justify-start mb-14">
-      <div>
-        <h2 className={cn(`${sans.className} text-sm text-neutral-400`)}>my</h2>
-        <h2
-          className={cn(
-            `${marker.className} text-2xl text-neutral-500 border-b-4 border-orange-100`,
-          )}
-        >
-          education.
-        </h2>
-      </div>
+    <div className="md:max-w-2xl w-full flex flex-col items-start justify-start mb-14">
+      <SectionTitle subtitle="my" title="education." />
       <div className="w-full flex items-center justify-between mt-5">
         <div className="flex gap-2.5 items-center">
           <div className="rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] p-1 border">
