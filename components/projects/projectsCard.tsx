@@ -9,10 +9,15 @@ import {VscGithubAlt} from "react-icons/vsc";
 import {CiGlobe} from "react-icons/ci";
 import Image from "next/image";
 import {MdNotes} from "react-icons/md";
-import {ReceiptText} from "lucide-react";
+import {ChevronUpIcon, ReceiptText} from "lucide-react";
 import {TbNotes} from "react-icons/tb";
 import {HeroVideoDialog} from "../magic-ui/video-player";
 import {VideoDialogForProjectCard} from "../magic-ui/video-player-projects-card";
+import {SparklesIcon} from "../hover-icons/sparkles";
+import {useState} from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Spinner } from "../kibo-ui/spinner";
+import { useCompletion } from "@ai-sdk/react";
 
 interface ProjectsCardProps {
   // blogImage: React.ReactNode;
@@ -25,7 +30,7 @@ interface ProjectsCardProps {
   slug: string;
   videoLink: string;
   thumbnailImage: string;
-  optionalMessage?: string
+  optionalMessage?: string;
 }
 
 export default function ProjectsCard({
@@ -42,8 +47,32 @@ export default function ProjectsCard({
   optionalMessage,
 }: ProjectsCardProps) {
   const router = useRouter();
+  const [expanded, setExpanded] = useState(false);
+
+    const {
+    input,
+    handleInputChange,
+    handleSubmit,
+    completion,
+    isLoading,
+    error,
+    setInput,
+    stop,
+    complete,
+  } = useCompletion({
+    api: "/api/stream-project-summary",
+  });
+
+  const generateSummary = async () => {
+    const prompt =
+      `Generate a summary of the project ${title} in two lines.`;
+
+    setExpanded(true);
+    complete(prompt);
+  };
+
   return (
-    <div className="md:max-w-2xl w-full flex flex-col items-start rounded-xl shadow-[inset_0_1px_1px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] dark:bg-neutral-900 outline outline-neutral-100 dark:outline-neutral-900 hover:scale-101 transition-all duration-400">
+    <div className=" w-full flex flex-col items-start rounded-xl shadow-[inset_0_1px_1px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] dark:bg-neutral-900 outline outline-neutral-100 dark:outline-neutral-900 hover:scale-101 transition-all duration-400">
       <>
         <div className="w-full flex items-center justify-between rounded-lg">
           <div className="flex flex-col items-center">
@@ -83,7 +112,7 @@ export default function ProjectsCard({
                 >
                   {title}
                 </h2>
-                
+
                 <h2 className=" flex items-center gap-2 hover:underline dark:text-neutral-300 text-neutral-500">
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -115,22 +144,39 @@ export default function ProjectsCard({
                       <p>See Details</p>
                     </TooltipContent>
                   </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <div onClick={generateSummary}>
+                        <SparklesIcon
+                          className="text-neutral-400  hidden md:inline"
+                          size={16}
+                        />
+                        <SparklesIcon
+                          className="text-neutral-400  inline md:hidden"
+                          size={12}
+                        />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{expanded ? "Generate Again" : "Get AI Summary"}</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </h2>
               </div>
 
               <h2
-                className={cn(`${sans.className} text-sm text-neutral-400  `)}
+                className={cn(`${sans.className} text-sm text-neutral-500 dark:text-neutral-400  `)}
               >
                 {/* Collection of books, articles and research papers. */}
                 {description}
               </h2>
               <h2
-                  className={cn(
-                    `${sans.className} text-xs dark:text-neutral-300 text-neutral-400`,
-                  )}
-                >
-                  {optionalMessage}
-                </h2>
+                className={cn(
+                  `${sans.className} text-xs dark:text-neutral-300 text-neutral-400`,
+                )}
+              >
+                {optionalMessage}
+              </h2>
               <div className="flex flex-col w-full items-start">
                 <h2
                   className={`text-sm dark:text-neutral-300 font-medium text-neutral-400 ${sans.className}`}
@@ -158,13 +204,67 @@ export default function ProjectsCard({
                   </div>
                 </div>
               </div>
-              {/* <div className="flex flex-col w-full items-start gap-0.5">
-                <hr className="w-full border-neutral-100" />
-                <h2 className={cn(`text-[11px] dark:text-neutral-300 text-neutral-400 ${sans.className}`)}>on {whereWritten}</h2>
-              </div> */}
             </div>
           </div>
         </div>
+           <AnimatePresence initial={false}>
+                  {expanded && (
+                    <motion.div
+                      initial={{opacity: 0, height: 0}}
+                      animate={{opacity: 1, height: "auto"}}
+                      exit={{opacity: 0, height: 0}}
+                      transition={{
+                        duration: 0.35,
+                        ease: [0.4, 0, 0.2, 1], // material-like easing
+                      }}
+                      className={cn("w-full px-4 pb-4", sans.className)}
+                    >
+                      <hr className="w-full border border-neutral-100 dark:border-neutral-700" />
+                      <div className="flex items-baseline justify-between">
+                        <div className="flex items-center gap-1 text-[11px] mt-2">
+                          <SparklesIcon
+                            className="text-neutral-500 dark:text-neutral-400"
+                            size={10}
+                          />
+                          This is Gemini Generated Summary
+                        </div>
+                        <div
+                          className="rounded-full bg-neutral-100 dark:bg-neutral-800 p-0.5 hover:cursor-pointer"
+                          onClick={() => setExpanded(false)}
+                        >
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <ChevronUpIcon size={10} />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Collapse Summary</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                      </div>
+                      <div className="text-neutral-500 dark:text-neutral-400 text-sm mt-1 ">
+                        {error && (
+                          <div className="text-red-500 mb-4">{error.message}</div>
+                        )}
+                        {isLoading && !completion && (
+                          <div className="flex items-center gap-1 text-xs">
+                            <Spinner variant="throbber" size={12} />
+                            <span className="animate-pulse">Thinking...</span>
+                          </div>
+                        )}
+                        {completion && (
+                          <div className="whitespace-pre-wrap">{completion}</div>
+                        )}
+                        
+                        {/* The Courage to Be Disliked explores how our happiness depends less
+                        on past experiences and more on the choices we make in the
+                        present. Through Adlerian psychology, it argues that freedom comes
+                        from letting go of the need for approval and taking responsibility
+                        for our own life goals. */}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
       </>
     </div>
   );

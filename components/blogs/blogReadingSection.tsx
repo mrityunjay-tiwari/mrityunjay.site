@@ -43,6 +43,7 @@ import {
 } from "@/components/kibo-ui/editor";
 
 import type {JSONContent} from "@/components/kibo-ui/editor";
+import { sans } from "@/lib/fonts";
 
 export default function BlogReadingContentSection({
   previousContent,
@@ -52,7 +53,7 @@ export default function BlogReadingContentSection({
   return (
     <>
       <EditorProvider
-        className="h-full w-full overflow-y-auto rounded-none bg-background dark:bg-inherit py-4"
+        className={(`h-full w-full overflow-y-auto rounded-none bg-background dark:bg-inherit py-4 ${sans.className} text-neutral-700 dark:text-neutral-300`)}
         content={previousContent}
         placeholder="Write or press 'space and /' for commands"
         editable={false}

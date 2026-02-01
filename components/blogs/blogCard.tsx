@@ -59,7 +59,7 @@ export default function BlogCard({
               </div>
 
               <h2
-                className={cn(`${sans.className} text-sm text-neutral-400  `)}
+                className={cn(`${sans.className} text-sm text-neutral-500 dark:text-neutral-400  `)}
               >
                 {/* Collection of books, articles and research papers. */}
                 {description}
