@@ -43,14 +43,14 @@ To run this project locally, follow these steps:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/portfolio2.git
-    cd portfolio2
+    git clone https://github.com/mrityunjay-tiwari/mrityunjay.site
+    cd mrityunjay.site
     ```
 
 2.  **Install dependencies:**
 
     ```bash
-    pnpm install
+    npm install
     ```
 
 3.  **Set up Environment Variables:**
