@@ -1,12 +1,12 @@
 import { streamText } from "ai";
-import { openrouter } from "@openrouter/ai-sdk-provider";
 import { PROJECT_SYMMARY_SYSTEM_PROMPT } from "@/utils/system-prompt";
+import { google } from '@ai-sdk/google';
 
 export async function POST(req: Request) {
     try {
         const {prompt} = await req.json()
     const result = await streamText({
-        model: openrouter("openai/gpt-4o-mini"),
+        model: google('gemini-2.5-flash'),
         system: `You are a smart agent who summarises the information about the project asked in a short and crisp manner.
                     Instructions : 
                     - Be precise

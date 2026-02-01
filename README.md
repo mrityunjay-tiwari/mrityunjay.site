@@ -1,5 +1,7 @@
 # Mrityunjay's Portfolio
 
+![Built with Antigravity](https://img.shields.io/badge/Built%20with-Antigravity-4285F4?style=for-the-badge&logo=google)
+
 Welcome to the repository for my personal portfolio website, a showcase of my work, thoughts, and professional journey. This project is built with the latest web technologies to ensure performance, accessibility, and a premium user experience.
 
 ## Features
@@ -27,6 +29,7 @@ This project leverages a modern full-stack architecture:
 - **Email:** [Resend](https://resend.com/)
 - **Editor:** [Tiptap](https://tiptap.dev/) (Headless)
 - **UI Components:** [Radix UI](https://www.radix-ui.com/) primitives
+- **Development Partner:** Antigravity — Architected, designed, and debugged using Google DeepMind's advanced agentic coding assistant.
 
 ## Getting Started
 
@@ -68,8 +71,9 @@ To run this project locally, follow these steps:
 
     ```bash
     npm run dev
-    
+
     Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    ```
 
 ## Scripts
 
