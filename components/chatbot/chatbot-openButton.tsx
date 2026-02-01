@@ -270,13 +270,13 @@ export default function ChatBotOpenButton() {
       <Tooltip>
         <TooltipTrigger asChild>
           <div
-            className="rounded-full p-5 bg-neutral-800 w-full"
+            className="rounded-full p-5 bg-neutral-800 dark:bg-neutral-200 w-full"
             onClick={() => setExpanded(!expanded)}
           >
             {expanded ? (
-              <XIcon className="text-neutral-50" size={18} />
+              <XIcon className="text-neutral-50 dark:text-neutral-950" size={18} />
             ) : (
-              <MessageCircleIcon className="text-neutral-50" size={18} />
+              <MessageCircleIcon className="text-neutral-50 dark:text-neutral-950" size={18} />
             )}
           </div>
         </TooltipTrigger>
@@ -294,28 +294,29 @@ export default function ChatBotOpenButton() {
               duration: 0.35,
               ease: [0.4, 0, 0.2, 1], // material-like easing
             }}
-            className="absolute bottom-16 shadow-xl right-0 rounded-xl w-[520px] h-[500px] bg-neutral-50 border overflow-hidden"
+            className="absolute bottom-16 shadow-xl right-0 rounded-xl w-[92vw] md:w-[520px] h-[500px] bg-neutral-50 dark:bg-neutral-900 border overflow-hidden"
           >
             <div className="w-full border-b flex items-center gap-2 px-4 py-3">
               <div className="">
-                <div className="rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] p-1 border">
+                <div className="rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] dark:shadow-[inset_0_2px_4px_rgba(255,255,255,0.12)] p-1 border">
                   <Image
                     src={"https://ik.imagekit.io/mrityunjay/profile.jpg"}
                     alt=""
                     width={20}
                     height={20}
+                    className="rounded"
                   />
                 </div>
               </div>
               <div className={cn(`flex flex-col items-start`)}>
                 <p
                   className={cn(
-                    `text-sm font-medium text-neutral-700 ${sans.className}`,
+                    `text-sm font-medium text-neutral-700 dark:text-neutral-300 ${sans.className}`,
                   )}
                 >{`Mrityunjay's AI`}</p>
                 <div
                   className={cn(
-                    `text-xs text-neutral-500 flex gap-1 items-start ${sans.className}`,
+                    `text-xs text-neutral-500 dark:text-neutral-400 flex gap-1 items-start ${sans.className}`,
                   )}
                 >
                   <div className="flex items-center gap-1">
@@ -337,6 +338,14 @@ export default function ChatBotOpenButton() {
                     alt=""
                     width={35}
                     height={35}
+                    className="dark:hidden"
+                  />
+                  <Image
+                    src={"https://ik.imagekit.io/mrityunjay/TechStack/gemini-dark.png"}
+                    alt=""
+                    width={35}
+                    height={35}
+                    className="dark:inline hidden"
                   />
                 </div>
               </div>
@@ -345,7 +354,7 @@ export default function ChatBotOpenButton() {
               ref={scrollRef}
               onScroll={handleScroll}
               className={cn(
-                `h-[80%] absolute w-full bg-neutral-50 overflow-y-auto px-5 pb-5 thin-scrollbar hover:cursor-default ${sans.className}`,
+                `h-[80%] absolute w-full bg-neutral-50 dark:bg-neutral-950 overflow-y-auto px-5 pb-5 thin-scrollbar hover:cursor-default ${sans.className}`,
               )}
             >
               {error && (
@@ -372,6 +381,7 @@ export default function ChatBotOpenButton() {
                           alt=""
                           width={15}
                           height={15}
+                          className="rounded"
                         />
                       </div>
                     )}
@@ -386,14 +396,14 @@ export default function ChatBotOpenButton() {
                         >
                           <div
                             className={cn(
-                              "w-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.09)]  rounded-lg  text-sm my-2",
+                              "w-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.09)] dark:shadow-[inset_0_2px_4px_rgba(255,255,255,0.12)]  rounded-lg  text-sm my-2",
                               isUser
                                 ? "bg-blue-100 text-neutral-800 rounded-tr-none px-3 pt-2 pb-1"
-                                : "bg-neutral-100 text-neutral-800 rounded-tl-none px-3 py-2",
+                                : "bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-200 text-neutral-800 rounded-tl-none px-3 py-2",
                             )}
                           >
                             <MarkDownRenderer content={part.text} />
-                            <div className="flex -mr-1.5 items-center justify-end gap-1 text-[10px] text-neutral-500 font-light">
+                            <div className="flex -mr-1.5 items-center justify-end gap-1 text-[10px] text-neutral-500 dark:text-neutral-400 font-light">
                               <div>{meta?.time}</div>
                               {isUser && (
                                 <>
@@ -440,7 +450,7 @@ export default function ChatBotOpenButton() {
                     }}
                     className="flex flex-col gap-2"
                   >
-                    <div className="text-xs font-semibold text-neutral-700">
+                    <div className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
                       Ask :
                     </div>
                     <div className="flex flex-wrap gap-2 w-full ">
@@ -448,7 +458,7 @@ export default function ChatBotOpenButton() {
                         <Button
                           key={msg.id}
                           variant={"outline"}
-                          className="rounded-xl text-xs shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)]"
+                          className="rounded-xl text-neutral-950 dark:text-inherit dark:bg-neutral-800 hover:dark:bg-neutral-700 hover:cursor-pointer text-xs shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)]"
                           onClick={() => {
                             // setInputValue(msg.message);
                             setGivenQuestionNotAsked(false);
@@ -475,15 +485,15 @@ export default function ChatBotOpenButton() {
                 onClick={scrollToBottom}
                 variant={"outline"}
                 size={"icon"}
-                className="relative top-[300px] left-[240px] rounded-full"
+                className="relative top-[300px] left-[240px] rounded-full dark:text-white dark:bg-neutral-900"
               >
-                <ChevronDownIcon className="text-black" size={14} />
+                <ChevronDownIcon className="" size={14} />
               </Button>
             )}
             <form onSubmit={handleSubmit} ref={formRef} action={""}>
-              <div className="absolute bottom-0 w-full border-t px-4 py-3 flex items-center bg-white">
+              <div className="absolute bottom-0 w-full border-t px-4 py-3 flex items-center bg-white dark:bg-neutral-900">
                 <Textarea
-                  className="rounded-lg resize-none max-h-20 thin-scrollbar"
+                  className="rounded-lg resize-none max-h-20 thin-scrollbar dark:bg-neutral-900"
                   placeholder="Ask me anything..."
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}

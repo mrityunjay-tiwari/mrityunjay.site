@@ -21,21 +21,21 @@ export default function ReadingListPage() {
       <div className="flex flex-col items-center justify-center gap-3.5 mb-10">
         <h2
           className={cn(
-            `${marker.className} text-4xl font-medium text-neutral-500 dark:text-neutral-100  border-b-4 border-orange-100`,
+            `${marker.className} text-3xl md:text-4xl font-medium text-neutral-500 dark:text-neutral-100  border-b-4 border-orange-100`,
           )}
         >
           ☕︎ reading list.
         </h2>
         <h2
           className={cn(
-            `${sans.className}  text-neutral-500 dark:text-neutral-300`,
+            `${sans.className} flex text-center text-neutral-500 dark:text-neutral-300`,
           )}
         >
-          Collection of books, articles and research papers.
+          A collection of books, articles and research papers.
         </h2>
         {/* What other aspects exite me - Finance, Product and life in general. */}
       </div>
-      <hr className="w-full border-0.5 border-neutral-200" />
+      <hr className="w-full border-0.5 border-neutral-200 dark:border-neutral-700" />
       <div className="w-full flex flex-col items-start gap-3.5">
         <ReadingListPageDisplaySection />
 

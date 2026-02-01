@@ -224,7 +224,7 @@ export default function ExpandableGallery() {
               "relative w-full",
               isExpanded
                 ? "grid grid-cols-2 lg:grid-cols-4 auto-rows-[180px] gap-3 px-4 mb-4"
-                : "flex flex-col items-center justify-start pt-4",
+                : "flex flex-col items-center justify-start pt-0 md:pt-4",
             )}
             transition={transition}
           >
@@ -233,7 +233,7 @@ export default function ExpandableGallery() {
                 "relative",
                 isExpanded
                   ? "contents"
-                  : "h-[350px] w-full flex items-center justify-center mb-5",
+                  : "h-[350px] w-full flex items-center justify-center mb-0 md:mb-5",
               )}
             >
               {PHOTOS.map((photo, index) => {
@@ -283,7 +283,7 @@ export default function ExpandableGallery() {
                               hoveredIndex !== index &&
                               "blur-xs scale-[0.99] transition-all duration-300",
                           )
-                        : "absolute w-44 h-44 md:w-60 md:h-60 rounded-xl dark:border-0 border-2 border-background shadow-[0_2px_4px_rgba(0,0,0,0.25)]",
+                        : "absolute w-36 h-36 md:w-60 md:h-60 rounded-xl dark:border-0 border-2 border-background shadow-[0_2px_4px_rgba(0,0,0,0.25)]",
                     )}
                     onClick={() => !isExpanded && setIsExpanded(true)}
                   >

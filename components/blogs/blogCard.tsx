@@ -15,20 +15,27 @@ interface ReadingListProps {
   title: string;
   description?: string;
   whereWritten? : string
+  createdAt: string,
+  readingTime: string
+  slug: string,
+  link: string
 }
 
 export default function BlogCard({
   blogImage,
   title,
   description,
-  whereWritten
+  whereWritten,
+  createdAt,
+  readingTime,
+  slug,
+  link
 }: ReadingListProps) {
-  const router = useRouter();
   return (
-    <div className="md:max-w-2xl w-full flex flex-col items-start rounded-xl shadow-[inset_0_1px_1px_rgba(0,0,0,0.08)] border hover:scale-101 transition-all duration-400">
+    <div className="md:max-w-2xl hover:cursor-pointer w-full flex flex-col items-start rounded-xl shadow-[inset_0_1px_1px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] dark:bg-neutral-900 outline outline-neutral-100 dark:outline-neutral-900 hover:scale-101 transition-all duration-400">
       <>
         <Link
-          href="/reading-list"
+          href={link}
           className="w-full flex items-center justify-between rounded-lg"
         >
           <div className="flex flex-col items-center">
@@ -37,8 +44,8 @@ export default function BlogCard({
               {blogImage}
             </div>
 
-            <div className="flex flex-col items-start gap-3 p-7 pb-4 dark:bg-neutral-900 overflow-hidden rounded-b-xl">
-              <div className="flex items-baseline w-full justify-between">
+            <div className="flex flex-col items-start gap-3 w-full p-5 md:p-7 pb-4 dark:bg-neutral-900 overflow-hidden rounded-b-xl">
+              <div className="flex gap-1.5 items-baseline w-full justify-between">
                 <h2
                 className={cn(
                   `${marker.className} font-medium dark:text-inherit text-neutral-700 hover:underline hover:text-orange-300 hover:cursor-pointer transition-all duration-200 `,
@@ -58,12 +65,12 @@ export default function BlogCard({
                 {description}
               </h2>
               <div className="flex w-full items-center justify-between">
-                <div className="flex items-center gap-2 text-xs dark:text-neutral -300 text-neutral-500">
+                <div className="flex items-center gap-2 text-xs dark:text-neutral-300 text-neutral-500">
                   <CalendarDays className="w-3 h-3 dark:text-neutral-300 text-neutral-700" />
-                  23 Jan, 2026
+                  {createdAt}
                 </div>
                 <h2 className="text-xs dark:text-neutral-300 text-neutral-500">
-                  3 min
+                  {readingTime}
                 </h2>
               </div>
               {/* <div className="flex flex-col w-full items-start gap-0.5">

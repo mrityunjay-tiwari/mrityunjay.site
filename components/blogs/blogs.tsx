@@ -11,15 +11,32 @@ import {Button} from "../ui/button";
 import {ArrowUpRightIcon} from "../hover-icons/arrow-up-right";
 import {motion} from "motion/react";
 import SectionTitle from "../tech-stack/sectionTitle";
-import { useRouter } from "next/navigation";
+import {useRouter} from "next/navigation";
+import {BlogType} from "@/lib/generated/prisma/enums";
 
-type BlogType = "tech" | "personal";
+interface BlogsProps {
+  blogPosts: {
+    link: string;
+    image: string;
+    id: string;
+    description: string;
+    slug: string;
+    createdAt: Date;
+    blogTitle: string;
+    type: BlogType;
+    websiteOn: string;
+    wordCount: number;
+  }[];
+}
 
-export default function FeaturedBlogs() {
-  const [blogType, setBlogType] = useState<BlogType>("tech");
+export default function FeaturedBlogs({blogPosts}: BlogsProps) {
+  const [blogType, setBlogType] = useState<BlogType>(BlogType.TECH);
   const router = useRouter();
+
+  const filteredBlogs = blogPosts.filter((blog) => blog.type === blogType).slice(0, 2);;
+
   return (
-    <div className="md:max-w-2xl w-full flex flex-col items-start justify-start mb-14">
+    <div className="flex flex-col items-start justify-start mb-14">
       <SectionTitle subtitle="featured" title="blogs." />
       <motion.div
         className="w-full flex flex-col items-start gap-3.5 mt-5"
@@ -31,78 +48,46 @@ export default function FeaturedBlogs() {
         <div className="flex gap-1">
           <Badge
             className="hover:cursor-pointer"
-            variant={blogType === "tech" ? "default" : "outline"}
-            onClick={() => setBlogType("tech")}
+            variant={blogType === BlogType.TECH ? "default" : "outline"}
+            onClick={() => setBlogType(BlogType.TECH)}
           >
             Tech Blogs
           </Badge>
           <Badge
             className="hover:cursor-pointer"
-            variant={blogType === "personal" ? "default" : "outline"}
-            onClick={() => setBlogType("personal")}
+            variant={blogType === BlogType.THOUGHTS ? "default" : "outline"}
+            onClick={() => setBlogType(BlogType.THOUGHTS)}
           >
             Thoughts
           </Badge>
         </div>
-        {blogType === "tech" ? (
-          <div className="grid grid-cols-2 w-full gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12">
+          {filteredBlogs.map((blog) => (
             <BlogCard
+              slug={blog.slug}
+              link={blog.link}
+              key={blog.id}
               blogImage={
                 <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(7).png"
-                  alt=""
+                  src={blog.image}
+                  alt={blog.blogTitle}
                   width={400}
                   height={400}
                   className="overflow-hidden rounded-t-xl"
                 />
               }
-              title="Tech Blog 1"
-              description="Collection of books, articles and research papers."
+              title={blog.blogTitle}
+              description={blog.description}
+              whereWritten={blog.websiteOn}
+              createdAt={new Date(blog.createdAt).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+              readingTime={`${Math.ceil(blog.wordCount / 200)} min read`}
             />
-            <BlogCard
-              blogImage={
-                <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(6).png"
-                  alt=""
-                  width={400}
-                  height={400}
-                  className="overflow-hidden rounded-t-xl"
-                />
-              }
-              title="Tech Blog 2"
-              description="Collection of books, articles and research papers."
-            />
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 w-full gap-12">
-            <BlogCard
-              blogImage={
-                <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(6).png"
-                  alt=""
-                  width={400}
-                  height={400}
-                  className="overflow-hidden rounded-t-xl"
-                />
-              }
-              title="Personal Blog 1"
-              description="Collection of books, articles and research papers."
-            />
-            <BlogCard
-              blogImage={
-                <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(6).png"
-                  alt=""
-                  width={400}
-                  height={400}
-                  className="overflow-hidden rounded-t-xl"
-                />
-              }
-              title="Personal Blog 2"
-              description="Collection of books, articles and research papers."
-            />
-          </div>
-        )}
+          ))}
+        </div>
       </motion.div>
       <motion.div
         initial={{opacity: 0, y: 25}}

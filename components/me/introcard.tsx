@@ -17,26 +17,17 @@ import {VscGithubAlt} from "react-icons/vsc";
 import {PiMediumLogoLight} from "react-icons/pi";
 import {SiPeerlist} from "react-icons/si";
 import {motion} from "motion/react";
-
-const marker = Fraunces({
-  variable: "--font-shadow",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: "normal",
-});
-
-const sans = Inter({
-  variable: "--font-shadow",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: "normal",
-});
+import {useRouter} from "next/navigation";
+import {marker, sans} from "@/lib/fonts";
+import {useRef, useState} from "react";
 
 export default function IntroCard() {
+  const router = useRouter();
+  const [availability, setAvailability] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   return (
-    <div
-      
-      className="p-10 px-14 flex gap-5 items-end border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-900 shadow-2xs max-w-4xl md:min-w-2xl rounded-xl justify-between my-10 mt-[66px]"
-    >
-      <div className="text-3xl">
+    <div className="flex items-end justify-between p-5 md:p-10 md:px-14 border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-900 rounded-xl shadow-none md:shadow-2xs my-10 mt-[66px]">
+      <div className="text-xl md:text-3xl">
         <div className={cn(`${sans.className}`)}>Hi there,</div>
         <div className={cn(`${sans.className} flex items-center gap-1`)}>
           {`I'm`}{" "}
@@ -50,71 +41,18 @@ export default function IntroCard() {
         </div>
         <div
           className={cn(
-            `${sans.className} text-neutral-400 text-lg md:whitespace-nowrap`,
+            `${sans.className} text-neutral-400 md:text-lg text-[12px] md:whitespace-nowrap`,
           )}
         >{`I'm a full-stack web developer.`}</div>
-        <div className="mt-2">
-          {/* <Button className="rounded-full shadow" variant={"ghost"}>
-            Get in Touch
-            <CursorClickIcon />
-          </Button> */}
+        <div className="mt-0 md:mt-2">
           <ParticleButton
-            className="rounded-full shadow hover:cursor-pointer dark:bg-neutral-700"
+            className="rounded-full shadow hover:cursor-pointer dark:bg-neutral-700 scale-70 md:scale-100 origin-left"
             particleClass="bg-black dark:bg-white"
+            onClick={() => router.push("/contact")}
           >
             Get in touch
             <CursorClickIcon />
           </ParticleButton>
-          {/* <div className="flex gap-2 mt-4 text-neutral-500">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <CiMail className="size-5" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Email</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <FaXTwitter className="size-5" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Twitter</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <PiLinkedinLogoLight className="size-5 scale-110" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>LinkedIn</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <VscGithubAlt className="size-5 scale-110" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>GitHub</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <PiMediumLogoLight className="size-5 scale-110" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Medium</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <SiPeerlist className="size-5" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Peerlist</p>
-              </TooltipContent>
-            </Tooltip>
-          </div> */}
         </div>
       </div>
       <div className="relative inline-block">
@@ -123,18 +61,28 @@ export default function IntroCard() {
           alt="myImage"
           width={180}
           height={180}
-          className="grayscale-75 brightness-110 hover:grayscale-0 hover:transition-all hover:duration-500"
+          className="grayscale-75 brightness-110 hover:grayscale-0 hover:transition-all hover:duration-500 hidden md:inline "
+        />
+        <Image
+          src={"https://ik.imagekit.io/mrityunjay/profile.jpg"}
+          alt="myImage"
+          width={140}
+          height={140}
+          className="grayscale-75 brightness-110 hover:grayscale-0 hover:transition-all hover:duration-500 inline md:hidden "
         />
         <div className="z-10 absolute p-1.5 -bottom-2 -right-2 bg-white shadow-lg rounded-full hover:cursor-pointer">
           <Tooltip>
             <TooltipTrigger asChild>
-              <div className="relative w-3 h-3 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-in z-10 absolute justify-self-center"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-300 animate-[ping_1.5s_ease-in-out_infinite] absolute justify-self-center"></div>
+              <div
+                className="relative md:w-3 md:h-3 w-2 h-2 flex items-center justify-center"
+                onClick={() => setAvailability(!availability)}
+              >
+                <div className="md:w-2.5 md:h-2.5 w-2 h-2 rounded-full bg-green-400 animate-in z-10 absolute justify-self-center"></div>
+                <div className="md:w-2.5 md:h-2.5 w-2 h-2 rounded-full bg-green-300 animate-[ping_1.5s_ease-in-out_infinite] absolute justify-self-center"></div>
               </div>
             </TooltipTrigger>
             <TooltipContent>
-              <div className="flex gap-1">
+              <div className="flex gap-1" ref={ref}>
                 <span className="text-orange-300">˗`ˎ</span>
                 {` Available for freelance work or full-time roles `}
                 <span className="text-orange-300">ˎˊ˗</span>

@@ -4,7 +4,7 @@ import ContactWebsites from "@/components/contact-websites/contact-websites";
 import CurrentlyReading from "@/components/currently-reading/currently-reading";
 import Education from "@/components/education/education";
 import Footer from "@/components/footer/footer";
-import Intro from "@/components/intro/intro-server";
+
 // import Intro from "@/components/intro/intro";
 import IntroCard from "@/components/me/introcard";
 import {Navbar} from "@/components/navbar/nav";
@@ -17,24 +17,28 @@ import TechStack from "@/components/tech-stack/tech-stack";
 import ThanksMessage from "@/components/thanks/thanksmessage";
 import WorkExperience from "@/components/workExperience/work-experience";
 import Image from "next/image";
+import {getAllBlogPosts} from "./actions/contents";
+import Intro from "@/components/intro/intro";
+import {Container} from "@/components/layout/container";
+import Rays from "@/components/intro/rays";
 
-export default function Home() {
+export default async function Home() {
+  const blogPosts = await getAllBlogPosts();
   return (
     <main className="w-full mx-auto flex flex-col items-center">
-      <IntroCard />
-      <Intro />
-      <ContactWebsites />
-      <TechStack />
-      <CurrentlyReading />
-      <WorkExperience />
-      <Education />
-      <Projects />
-      <FeaturedBlogs />
-      <PersonalLife />
-      <Newsletter />
-      <ThanksMessage />
-
-      <ChatBotOpenButton />
+      <Container>
+        <IntroCard />
+        <Rays />
+        <Intro />
+        <ContactWebsites />
+        <TechStack />
+        <CurrentlyReading />
+        <WorkExperience />
+        <Education />
+        <Projects />
+        <FeaturedBlogs blogPosts={blogPosts} />
+        <PersonalLife />
+      </Container>
     </main>
   );
 }

@@ -10,11 +10,31 @@ import Image from "next/image";
 import {Button} from "../ui/button";
 import {ArrowUpRightIcon} from "../hover-icons/arrow-up-right";
 import {motion} from "motion/react";
+import {BlogType} from "@/lib/generated/prisma/enums";
+import { useRouter } from "next/navigation";
 
-type BlogType = "tech" | "personal";
+interface BlogsProps {
+  blogPosts: {
+    link: string;
+    image: string;
+    id: string;
+    description: string;
+    slug: string;
+    createdAt: Date;
+    blogTitle: string;
+    type: BlogType;
+    websiteOn: string;
+    wordCount: number
+  }[];
+}
 
-export default function BlogPage() {
-  const [blogType, setBlogType] = useState<BlogType>("tech");
+export default function BlogPage({blogPosts}: BlogsProps) {
+  const [blogType, setBlogType] = useState<BlogType>(BlogType.TECH);
+
+  const filteredBlogs = blogPosts.filter((blog) => blog.type === blogType);
+
+  const router = useRouter()
+  
   return (
     <motion.div
       initial={{opacity: 0, y: 40}}
@@ -29,103 +49,67 @@ export default function BlogPage() {
       <div className="flex flex-col items-center justify-center gap-3.5 mb-10">
         <h2
           className={cn(
-            `${marker.className} text-4xl font-medium text-neutral-500 dark:text-neutral-100  border-b-4 border-orange-100`,
+            `${marker.className} text-3xl md:text-4xl font-medium text-neutral-500 dark:text-neutral-200  border-b-4 border-orange-100 dark:border-orange-200`,
           )}
         >
-          {blogType === "tech" ? ">_ logs." : "🗦 thoughts."}
+          {blogType === BlogType.TECH ? ">_ logs." : "˗ˏˋthoughts."}
         </h2>
         <h2
           className={cn(
-            `${sans.className}  text-neutral-500 dark:text-neutral-300`,
+            `${sans.className} flex text-center text-neutral-500 dark:text-neutral-300`,
           )}
         >
-          {blogType === "tech"
+          {blogType === BlogType.TECH
             ? `"My learning and insights on various aspects of programming."`
             : `"Things beyond code that interest me."`}
         </h2>
         {/* What other aspects exite me - Finance, Product and life in general. */}
       </div>
-      <hr className="w-full border-0.5 border-neutral-200" />
+      <hr className="w-full border-0.5 border-neutral-200 dark:border-neutral-700" />
       <div className="w-full flex flex-col items-start gap-3.5 mt-5">
         <div className="flex gap-1">
           <Badge
             className="hover:cursor-pointer"
-            variant={blogType === "tech" ? "default" : "outline"}
-            onClick={() => setBlogType("tech")}
+            variant={blogType === BlogType.TECH ? "default" : "outline"}
+            onClick={() => setBlogType(BlogType.TECH)}
           >
             Tech Blogs
           </Badge>
           <Badge
             className="hover:cursor-pointer"
-            variant={blogType === "personal" ? "default" : "outline"}
-            onClick={() => setBlogType("personal")}
+            variant={blogType === BlogType.THOUGHTS ? "default" : "outline"}
+            onClick={() => setBlogType(BlogType.THOUGHTS)}
           >
             Thoughts
           </Badge>
         </div>
-        {blogType === "tech" ? (
-          <div className="grid grid-cols-2 w-full gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12">
+          {filteredBlogs.map((blog) => (
             <BlogCard
+              slug={blog.slug}
+              link={blog.link}
+              key={blog.id}
               blogImage={
                 <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(7).png"
-                  alt=""
+                  src={blog.image}
+                  alt={blog.blogTitle}
                   width={400}
                   height={400}
                   className="overflow-hidden rounded-t-xl"
                 />
               }
-              title="Tech Blog 1"
-              description="Collection of books, articles and research papers."
-              whereWritten="medium.com"
+              title={blog.blogTitle}
+              description={blog.description}
+              whereWritten={blog.websiteOn}
+              createdAt={new Date(blog.createdAt).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+              readingTime={`${Math.ceil(blog.wordCount / 200)} min read`}
             />
-            <BlogCard
-              blogImage={
-                <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(6).png"
-                  alt=""
-                  width={400}
-                  height={400}
-                  className="overflow-hidden rounded-t-xl"
-                />
-              }
-              title="Tech Blog 2"
-              description="Collection of books, articles and research papers."
-              whereWritten="medium.com"
-            />
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 w-full gap-12">
-            <BlogCard
-              blogImage={
-                <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(6).png"
-                  alt=""
-                  width={400}
-                  height={400}
-                  className="overflow-hidden rounded-t-xl"
-                />
-              }
-              title="Personal Blog 1"
-              description="Collection of books, articles and research papers."
-              whereWritten="medium.com"
-            />
-            <BlogCard
-              blogImage={
-                <Image
-                  src="https://ik.imagekit.io/mrityunjay/Untitled%20design%20(6).png"
-                  alt=""
-                  width={400}
-                  height={400}
-                  className="overflow-hidden rounded-t-xl"
-                />
-              }
-              title="Personal Blog 2"
-              description="Collection of books, articles and research papers."
-              whereWritten="medium.com"
-            />
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </motion.div>
   );

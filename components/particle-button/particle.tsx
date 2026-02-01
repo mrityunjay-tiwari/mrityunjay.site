@@ -93,6 +93,7 @@ export default function ParticleButton({
     setTimeout(() => {
       setShowParticles(false);
     }, successDuration);
+    onClick?.(e);
   };
 
   return (

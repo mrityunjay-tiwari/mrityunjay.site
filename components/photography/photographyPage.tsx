@@ -17,24 +17,24 @@ export default function PhotographyPage() {
       }}
       className="md:min-w-2xl w-full flex flex-col items-center justify-center my-32"
     >
-      <div className="flex flex-col items-center justify-center gap-3.5 mb-10">
+      <div className="flex max-w-[calc(100%-2.5rem)] md:max-w-2xl flex-col items-center justify-center gap-3.5 mb-10">
         <h2
           className={cn(
-            `${marker.className} text-4xl font-medium text-neutral-500 dark:text-neutral-100  border-b-4 border-orange-100`,
+            `${marker.className} text-3xl md:text-4xl font-medium text-neutral-500 dark:text-neutral-100  border-b-4 border-orange-100`,
           )}
         >
           𑣲 lens.
         </h2>
         <h2
           className={cn(
-            `${sans.className}  text-neutral-500 dark:text-neutral-300`,
+            `${sans.className} flex text-center text-neutral-500 dark:text-neutral-300`,
           )}
         >
           My lens trying to find beauty in mundane.
         </h2>
         {/* What other aspects exite me - Finance, Product and life in general. */}
       </div>
-      <hr className="md:max-w-2xl w-full border-0.5 border-neutral-200" />
+      <hr className="max-w-[calc(100%-2.5rem)] md:max-w-2xl w-full border-0.5 border-neutral-200 dark:border-neutral-700" />
       <div className="w-full flex flex-col items-start gap-3.5">
         
         <ExpandableGallery />

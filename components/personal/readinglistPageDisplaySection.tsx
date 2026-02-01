@@ -12,28 +12,43 @@ export default function ReadingListPageDisplaySection() {
   return (
     <div className="mt-5">
         <div className={cn(` font-medium text-neutral-500 mb-3.5 dark:text-neutral-100 ${sans.className} flex gap-2 items-center`) }>
-            <IoBookSharp className="bg-neutral-200 p-1" />
+            <IoBookSharp className="bg-neutral-200 dark:bg-gray-700 p-1 rounded w-4.5 h-4.5" />
             Books
         </div>
-      <div className="grid grid-cols-2 w-full gap-12">
+      <div className="grid md:grid-cols-2 grid-cols-1 w-full gap-12">
         <BooksCard
           blogImage={
             <Image
-              src="https://ik.imagekit.io/mrityunjay/61PIpidSThL%20(1).jpg"
+              src="https://ik.imagekit.io/mrityunjay/books/pathless-path.jpg"
               alt=""
               width={400}
               height={400}
               className="overflow-hidden rounded-t-xl"
             />
           }
-          title="Diary of a CEO"
-          description="by Steven Bartlet"
-          linkRef="https://www.amazon.com/Diary-CEO-Steve-Bartlet/dp/145164854X"
+          title="The Pathless Path"
+          description="by Paul Millerd"
+          linkRef="https://www.amazon.in/Pathless-Path-Imagining-Story-Work-ebook/dp/B09QF1ZCT2"
+        />
+        
+        <BooksCard
+          blogImage={
+            <Image
+              src="https://ik.imagekit.io/mrityunjay/books/hell-yeah-or-no.jpg"
+              alt=""
+              width={400}
+              height={400}
+              className="overflow-hidden rounded-t-xl"
+            />
+          }
+          title="Hell Yeah or No"
+          description="by Derek Sivers"
+          linkRef="https://www.amazon.in/Hell-Yeah-No-whats-worth-ebook/dp/B09YY9W9B3"
         />
         <BooksCard
           blogImage={
             <Image
-              src="https://ik.imagekit.io/mrityunjay/limitless.jpg"
+              src="https://ik.imagekit.io/mrityunjay/books/limitless%202.jpg"
               alt=""
               width={400}
               height={400}
@@ -42,26 +57,40 @@ export default function ReadingListPageDisplaySection() {
           }
           title="Limitless"
           description="by Jim Kwik"
-          linkRef="https://www.amazon.com/Limitless-Jim-Kwik/dp/145164854X"
+          linkRef="https://www.amazon.in/Limitless-Upgrade-Anything-Faster-Exceptional/dp/1401958230"
         />
-      </div>
-      <div className={cn(` font-medium text-neutral-500 mb-3.5 mt-7 dark:text-neutral-100 ${sans.className} flex gap-2 items-center`) }>
-            <MdArticle className="bg-neutral-200 p-1" />
-            Articles
-        </div>
-        <div className="grid grid-cols-2 w-full gap-12">
-        <ArticlesCard
+        <BooksCard
           blogImage={
             <Image
-              src="https://ik.imagekit.io/mrityunjay/Screenshot%202026-01-24%20112051.png"
+              src="https://ik.imagekit.io/mrityunjay/books/the-first-and-last-freedom.jpg"
               alt=""
               width={400}
               height={400}
               className="overflow-hidden rounded-t-xl"
             />
           }
-          title="Lessons on building a viral consumer app"
-          description="by Lenny"
+          title="The First and Last Freedom"
+          description="by Jiddu Krishnamurti"
+          linkRef="https://www.amazon.in/First-Last-Freedom-J-Krishnamurti/dp/1846043751"
+        />
+      </div>
+      <div className={cn(` font-medium text-neutral-500 mb-3.5 mt-7 dark:text-neutral-100 ${sans.className} flex gap-2 items-center`) }>
+            <MdArticle className="bg-neutral-200 dark:bg-gray-700 p-1 rounded w-4.5 h-4.5" />
+            Articles
+        </div>
+        <div className="grid md:grid-cols-2 grid-cols-1 w-full gap-12">
+        <ArticlesCard
+          blogImage={
+            <Image
+              src="https://ik.imagekit.io/mrityunjay/books/lenny's-newsletter.png"
+              alt=""
+              width={400}
+              height={400}
+              className="overflow-hidden rounded-t-xl"
+            />
+          }
+          title="Lessons on building a viral consumer app."
+          description="by Lenny Rachitsky"
           linkRef="https://www.lennysnewsletter.com/p/lessons-on-building-a-viral-consumer"
           websiteName="substack.com"
         />
@@ -74,7 +103,7 @@ export default function ReadingListPageDisplaySection() {
               height={400}
               className="overflow-hidden rounded-t-xl"
             />
-          }
+          } 
           title="The art of viral"
           description="by Lenny"
           linkRef="https://www.lennysnewsletter.com/p/lessons-on-building-a-viral-consumer"
@@ -82,10 +111,10 @@ export default function ReadingListPageDisplaySection() {
         />
       </div>
       <div className={cn(` font-medium text-neutral-500 mb-3.5 mt-7 dark:text-neutral-100 ${sans.className} flex gap-2 items-center`) }>
-            <GiArchiveResearch className="bg-neutral-200 p-1" />
+            <GiArchiveResearch className="bg-neutral-200 dark:bg-gray-700 p-1   rounded w-4.5 h-4.5" />
             Research Papers
         </div>
-        <div className="grid grid-cols-2 w-full gap-12">
+        <div className="grid md:grid-cols-2 grid-cols-1 w-full gap-12">
         <ArticlesCard
           blogImage={
             <Image

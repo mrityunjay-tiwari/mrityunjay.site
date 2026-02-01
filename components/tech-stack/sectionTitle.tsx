@@ -17,13 +17,13 @@ export default function SectionTitle({subtitle, title} : SectionTitleProps) {
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
       >
-        <h2 className={cn(`${sans.className} text-sm text-neutral-400`)}>
+        <h2 className={cn(`${sans.className} md:text-sm text-xs text-neutral-400`)}>
           {subtitle}
         </h2>
 
         <h2
           className={cn(
-            `${marker.className} text-2xl text-neutral-500 border-b-4 border-orange-100`,
+            `${marker.className} text-xl md:text-2xl text-neutral-500 dark:text-neutral-200 border-b-4 border-orange-100 dark:border-orange-200`,
           )}
         >
           {title}

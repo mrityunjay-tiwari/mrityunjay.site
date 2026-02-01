@@ -5,6 +5,9 @@ import {Navbar} from "@/components/navbar/nav";
 import Footer from "@/components/footer/footer";
 import Newsletter from "@/components/newsletter/letterbox";
 import ThanksMessage from "@/components/thanks/thanksmessage";
+import ChatBotOpenButton from "@/components/chatbot/chatbot-openButton";
+import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,10 +34,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
         <Navbar />
         {children}
-        
+        <div id="modal-root" />
+        <Toaster />
+        <Newsletter />
+        <ThanksMessage />
         <Footer />
+        <ChatBotOpenButton />
+        </ThemeProvider>
       </body>
     </html>
   );

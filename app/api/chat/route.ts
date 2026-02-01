@@ -1,3 +1,4 @@
+import { MRITYUNJAY_AI_SYSTEM_PROMPT } from '@/utils/system-prompt'
 import { openrouter } from '@openrouter/ai-sdk-provider'
 import {UIMessage, streamText, convertToModelMessages} from 'ai'
 
@@ -8,9 +9,7 @@ export async function POST(req: Request) {
     const result = await streamText({
         model: openrouter("openai/gpt-4o-mini"),
         messages: convertToModelMessages(messages),
-        system: ` Instructions : 
-           1."Keep the answers formatted, bold or italic whereever required,
-           2."when you give any link give the full working url as link e.g. https://google.com, https://github.com." ` 
+        system: MRITYUNJAY_AI_SYSTEM_PROMPT
     })
 
     return result.toUIMessageStreamResponse()

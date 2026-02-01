@@ -9,33 +9,44 @@ import {useState} from "react";
 import {ChevronDownIcon} from "../hover-icons/down";
 import {AnimatePresence, motion} from "motion/react";
 import SectionTitle from "../tech-stack/sectionTitle";
+import Link from "next/link";
 
 export default function Education() {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="md:max-w-2xl w-full flex flex-col items-start justify-start mb-14">
+    <div className="flex flex-col items-start justify-start mb-14">
       <SectionTitle subtitle="my" title="education." />
       <div className="w-full flex items-center justify-between mt-5">
         <div className="flex gap-2.5 items-center">
-          <div className="rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] p-1 border">
+          <div className="rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] dark:shadow-[inset_0_2px_6px_rgba(255,255,255,0.10)] p-1 border">
             <Image
-              src={"https://ik.imagekit.io/mrityunjay/IIT-BHU_Logo.svg"}
+              src={"https://ik.imagekit.io/mrityunjay/iit_logo_original.png"}
               alt=""
               width={40}
               height={40}
+              className="hidden md:inline"
+            />
+            <Image
+              src={"https://ik.imagekit.io/mrityunjay/iit_logo_original.png"}
+              alt=""
+              width={35}
+              height={35}
+              className="inline md:hidden"
             />
           </div>
           <div className="flex flex-col items-start">
             <div className="flex gap-2 items-center">
               <h2
-                className={cn(`${marker.className} text-lg text-neutral-600 `)}
+                className={cn(`${marker.className} text-sm md:text-lg text-neutral-600 dark:text-neutral-300`)}
               >
                 IIT (BHU), Varanasi
               </h2>
               <div className="flex gap-1.5">
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <CiGlobe className="size-3.5 text-neutral-500 hover:text-neutral-700 hover:cursor-pointer" />
+                    <Link href="https://www.iitbhu.ac.in/" target="_blank">
+                      <CiGlobe className="size-3 md:size-3.5 text-neutral-500 hover:text-neutral-700 hover:cursor-pointer dark:text-neutral-300" />
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Visit Website</p>
@@ -45,7 +56,7 @@ export default function Education() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div
-                    className="rounded-full p-0.5 bg-neutral-100"
+                    className="rounded-full p-0.5 bg-neutral-100 dark:bg-neutral-800"
                     onClick={() => setExpanded((e) => !e)}
                   >
                     <ChevronDownIcon
@@ -62,13 +73,13 @@ export default function Education() {
                 </TooltipContent>
               </Tooltip>
             </div>
-            <h2 className={cn(`${sans.className} text-xs text-neutral-500  `)}>
+            <h2 className={cn(`${sans.className} text-xs text-neutral-500 dark:text-neutral-400 `)}>
               Pre-Final Year Undergraduate
             </h2>
           </div>
         </div>
         <div className="flex flex-col items-end">
-          <h2 className={cn(`${sans.className} text-sm text-neutral-500`)}>
+          <h2 className={cn(`${sans.className} text-xs md:text-sm text-neutral-500 dark:text-neutral-400`)}>
             2022 - Present
           </h2>
         </div>
@@ -84,7 +95,7 @@ export default function Education() {
               ease: [0.4, 0, 0.2, 1], // material-like easing
             }}
             className={cn(
-              `${sans.className} mt-5 text-neutral-500 text-sm pr-5 overflow-hidden`,
+              `${sans.className} mt-5 text-neutral-500 text-sm pr-5`,
             )}
           >
             <ul className="list-disc pl-4 space-y-2">

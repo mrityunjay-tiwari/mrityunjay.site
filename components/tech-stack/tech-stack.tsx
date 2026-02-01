@@ -9,28 +9,17 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import {motion} from "motion/react";
 import SectionTitle from "./sectionTitle";
-
-const marker = Fraunces({
-  variable: "--font-shadow",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: "normal",
-});
-
-const sans = Inter({
-  variable: "--font-shadow",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: "normal",
-});
+import { sans } from "@/lib/fonts";
 
 const stack = [
   {
     name: "Next.js",
-    image: "https://ik.imagekit.io/mrityunjay/logo-291886093470.jpeg",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/nextjs.jpeg?updatedAt=1769859276503",
     link: "https://nextjs.org/",
   },
   {
     name: "ReactJs",
-    image: "https://ik.imagekit.io/mrityunjay/images.png",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/react2.png",
     link: "https://react.dev/",
   },
   {
@@ -40,7 +29,7 @@ const stack = [
   },
   {
     name: "NodeJs",
-    image: "https://ik.imagekit.io/mrityunjay/images%20(2).png",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/nodejs.png",
     link: "https://nodejs.org/en/docs",
   },
   {
@@ -56,17 +45,67 @@ const stack = [
   {
     name: "PostgresSQL",
     image:
-      "https://ik.imagekit.io/mrityunjay/OT-integrations-logo-postgre-sql.png",
+      "https://ik.imagekit.io/mrityunjay/TechStack/postgreSQL.png?updatedAt=1769683921093",
     link: "https://www.postgresql.org/docs/",
   },
   {
+    name: "Prisma",
+    image:
+      "https://ik.imagekit.io/mrityunjay/TechStack/prisma-square.png",
+    link: "https://www.prisma.io/docs",
+  },
+  {
     name: "MongoDB",
-    image: "https://ik.imagekit.io/mrityunjay/images%20(1).png",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/mongodb.png?updatedAt=1769684316245",
     link: "https://www.mongodb.com/docs/",
   },
   {
+    name: "Postman",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/postman.png",
+    link: "https://sdk.vercel.ai/docs",
+  },
+  {
+    name: "Auth.js",
+    image:
+      "https://ik.imagekit.io/mrityunjay/TechStack/auth.js.png",
+    link: "https://authjs.dev/",
+  },
+  {
+    name: "Docker",
+    image:
+      "https://ik.imagekit.io/mrityunjay/TechStack/docker.png",
+    link: "https://www.docker.com/",
+  },
+  {
+    name: "Bun",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/Bun_JS_logo.png",
+    link: "https://sdk.vercel.ai/docs",
+  },
+  
+  {
+    name: "QdrantDB",
+    image: "https://ik.imagekit.io/mrityunjay/qdrant-brandmark-red.png",
+    link: "https://qdrant.tech/documentation/",
+  },
+  {
+    name: "LangChain",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/langchain.png?updatedAt=1769859024789",
+    link: "https://python.langchain.com/docs/",
+  },
+  {
+    name: "Vercel AI SDK",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/vercel-logo.png",
+    link: "https://sdk.vercel.ai/docs",
+  },
+  
+  {
+    name: "Git",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/git.png",
+    link: "https://sdk.vercel.ai/docs",
+  },
+  {
     name: "TailwindCSS",
-    image: "https://ik.imagekit.io/mrityunjay/images%20(3).png",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/tailwind.png?updatedAt=1769684239645",
     link: "https://tailwindcss.com/docs",
   },
   {
@@ -75,37 +114,10 @@ const stack = [
       "https://ik.imagekit.io/mrityunjay/2a38d0a3-269e-45b1-bd76-d95cdc971579.png",
     link: "https://motion.dev/docs/react",
   },
+  
   {
-    name: "Docker",
-    image:
-      "https://ik.imagekit.io/mrityunjay/images%20(5).png",
-    link: "https://www.docker.com/",
-  },
-  {
-    name: "Auth.js",
-    image:
-      "https://ik.imagekit.io/mrityunjay/67470890.png",
-    link: "https://authjs.dev/",
-  },
-  {
-    name: "Prisma",
-    image:
-      "https://ik.imagekit.io/mrityunjay/images%20(4).png",
-    link: "https://www.prisma.io/docs",
-  },
-  {
-    name: "QdrantDB",
-    image: "https://ik.imagekit.io/mrityunjay/qdrant-brandmark-red.png",
-    link: "https://qdrant.tech/documentation/",
-  },
-  {
-    name: "LangChain",
-    image: "https://ik.imagekit.io/mrityunjay/1_7Zx5IHNiz3U7GZ64wEuESg.png",
-    link: "https://python.langchain.com/docs/",
-  },
-  {
-    name: "Vercel AI SDK",
-    image: "https://ik.imagekit.io/mrityunjay/Vercel-e1652981744227.jpg",
+    name: "Shadcn UI",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/shadcn.png",
     link: "https://sdk.vercel.ai/docs",
   },
 ];
@@ -115,28 +127,16 @@ export default function TechStack() {
     const [expanded, setExpanded] = useState(false);
     const visibleStack = expanded ? stack : stack.slice(0, INITIAL_COUNT);
   return (
-    <div className="md:w-2xl w-full flex flex-col items-start justify-start mt-2 gap-2 md:pr-[50px]">
+    <div className="flex flex-col items-start justify-start mt-2 gap-2 md:pr-[50px]">
       <div className="w-full flex items-center justify-between">
-        {/* <motion.h2
-        initial={{opacity: 0, y: 25}}
-        whileInView={{opacity: 1, y: 0}}
-        viewport={{once: true, amount: 0.3}}
-        transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
-        className={cn(
-          `${marker.className} text-2xl text-neutral-500 border-b-4 border-orange-100`,
-        )}
-      >
-        my tech stack.
-      </motion.h2> */}
       <SectionTitle title="my tech stack." />
-      {/* <div className="text-sm text-neutral-500 flex gap-1 items-center cursor-pointer">more<ChevronDownIcon size={12} /></div> */}
       <motion.div
       initial={{opacity: 0, y: 25}}
       whileInView={{opacity: 1, y: 0}}
       viewport={{once: true, amount: 0.3}}
       transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
           onClick={() => setExpanded((v) => !v)}
-          className={cn(`text-xs text-neutral-400 flex gap-0.5 items-center cursor-pointer hover:text-neutral-700 transition ${sans.className}`)}
+          className={cn(`text-xs text-neutral-400 flex gap-0.5 items-center cursor-pointer hover:text-neutral-700 dark:hover:text-neutral-300 transition ${sans.className}`)}
         >
           {expanded ? "less" : "more"}
           <ChevronDownIcon
@@ -154,12 +154,12 @@ export default function TechStack() {
       viewport={{once: true, amount: 0.05}}
       transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
         className={cn(
-          `flex flex-wrap gap-3.5 text-neutral-500 ${sans.className}`,
+          `flex flex-wrap gap-2.5 md:gap-3.5 text-neutral-500 dark:text-neutral-300 ${sans.className}`,
         )}
       >
         {visibleStack.map((item, index) => (
           <Link key={index} href={item.link} target="_blank">
-            <div className="border border-dashed border-neutral-300 rounded-md px-1.5 py-[5px] flex items-center gap-1 text-sm shadow-[inset_0_2px_6px_rgba(0,0,0,0.15)] font-medium hover:scale-102 transition-all duration-500 hover:cursor-pointer">
+            <div className="border border-dashed border-neutral-300 dark:border-neutral-600 dark:bg-neutral-900 rounded-md px-1.5 md:px-1.5 py-[4px] md:py-[5px] flex items-center gap-1 text-[12.5px] md:text-sm shadow-[inset_0_2px_6px_rgba(0,0,0,0.15)] dark:shadow-[inset_0_2px_6px_rgba(255,255,255,0.15)] font-medium hover:scale-102 transition-all duration-500 hover:cursor-pointer">
               <Image
                 src={item.image}
                 alt=""
@@ -167,6 +167,7 @@ export default function TechStack() {
                 height={18}
                 className="rounded"
               />{" "}
+              
               {item.name}
             </div>
           </Link>

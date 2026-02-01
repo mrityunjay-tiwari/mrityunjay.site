@@ -104,7 +104,7 @@ export default function VoiceTranscription({
               `rounded-full ${isListening || isFormattingInput ? "hidden" : "inline-block"}`,
             )}
           >
-            {<MicIcon className="size-4 text-neutral-600" />}
+            {<MicIcon className="size-4 text-neutral-600 dark:text-neutral-400" />}
           </Button>
 
           <Button

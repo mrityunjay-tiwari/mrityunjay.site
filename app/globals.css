@@ -153,3 +153,10 @@
   width: 0;
 }
 
+#work-experience {
+  scroll-margin-top: 80px; 
+}
+
+html {
+  scroll-behavior: smooth;
+}

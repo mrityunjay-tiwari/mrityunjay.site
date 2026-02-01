@@ -23,10 +23,11 @@ export default function ArticlesCard({
   websiteName
 }: ReadingListProps) {
   return (
-    <div className="md:max-w-2xl w-full flex flex-col items-start rounded-xl shadow-[inset_0_1px_1px_rgba(0,0,0,0.08)] border hover:scale-101 transition-all duration-400">
+    <div className="md:max-w-2xl w-full flex flex-col items-start rounded-xl shadow-[inset_0_1px_1px_rgba(0,0,0,0.08)] border hover:scale-101 transition-all duration-400 dark:bg-neutral-900 ">
       <>
         <Link
           href={linkRef}
+          target="_blank"
           className="w-full flex items-center justify-between rounded-lg"
         >
           <div className="flex flex-col items-start">
@@ -51,14 +52,14 @@ export default function ArticlesCard({
                   {/* Collection of books, articles and research papers. */}
                   {description}
                 </h2>
-                <hr className="w-full border border-neutral-100" />
+                <hr className="w-full border border-neutral-100 dark:border-neutral-700" />
                 <h2 className="text-xs text-neutral-500 underline">{websiteName}</h2>
               </div>
               <div>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     
-                      <GoArrowUpRight className="text-neutral-500 w-3 h-3" />
+                      <GoArrowUpRight className="text-neutral-500 dark:text-neutral-400 w-3 h-3" />
                  
                   </TooltipTrigger>
 
