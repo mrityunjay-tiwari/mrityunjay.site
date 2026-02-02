@@ -1,6 +1,8 @@
 import {getProjectNoteById, getProjectNoteDetailsById, getProjectNoteSlugById, updateProjectNoteById} from "@/app/actions/contents";
 import MeWritingProjectNote from "@/components/admin/projectNote";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProjectPage({
   params,
 }: {

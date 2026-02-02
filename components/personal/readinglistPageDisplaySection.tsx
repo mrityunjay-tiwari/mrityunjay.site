@@ -15,7 +15,7 @@ export default function ReadingListPageDisplaySection() {
             <IoBookSharp className="bg-neutral-200 dark:bg-gray-700 p-1 rounded w-4.5 h-4.5" />
             Books
         </div>
-      <div className="grid md:grid-cols-2 grid-cols-1 w-full gap-12">
+      <div className="grid sm:grid-cols-2 grid-cols-1 w-full md:gap-12 gap-8">
         <BooksCard
           blogImage={
             <Image

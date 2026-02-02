@@ -26,8 +26,8 @@ export default function IntroCard() {
   const [availability, setAvailability] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   return (
-    <div className="flex items-end justify-between p-5 md:p-10 md:px-14 border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-900 rounded-xl shadow-none md:shadow-2xs my-10 mt-[66px]">
-      <div className="text-xl md:text-3xl">
+    <div className="flex items-end justify-between sm:max-w-xl md:max-w-2xl p-5 md:p-10 md:px-14 border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-900 rounded-xl shadow-none md:shadow-2xs my-10 mt-[66px]">
+      <div className="text-xl sm:text-2xl md:text-3xl">
         <div className={cn(`${sans.className}`)}>Hi there,</div>
         <div className={cn(`${sans.className} flex items-center gap-1`)}>
           {`I'm`}{" "}
@@ -41,12 +41,12 @@ export default function IntroCard() {
         </div>
         <div
           className={cn(
-            `${sans.className} text-neutral-400 md:text-lg text-[12px] md:whitespace-nowrap`,
+            `${sans.className} text-neutral-400 text-[12px] sm:text-base md:text-lg md:whitespace-nowrap`,
           )}
         >{`I'm a full-stack web developer.`}</div>
         <div className="mt-0 md:mt-2">
           <ParticleButton
-            className="rounded-full shadow hover:cursor-pointer dark:bg-neutral-700 scale-70 md:scale-100 origin-left"
+            className="rounded-full shadow hover:cursor-pointer dark:bg-neutral-700 scale-70 sm:scale-85 md:scale-100 origin-left"
             particleClass="bg-black dark:bg-white"
             onClick={() => router.push("/contact")}
           >

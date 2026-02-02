@@ -156,12 +156,8 @@ export default function Projects() {
       <SectionTitle subtitle="featured" title="projects." />
       <motion.div
         className="w-full flex flex-col items-start gap-3.5 mt-5"
-        initial={{opacity: 0, y: 25}}
-        whileInView={{opacity: 1, y: 0}}
-        viewport={{once: true, amount: 0.3}}
-        transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:gap-12 gap-8">
           {PROJECT_DETAILS.map((project, index) => (
             <ProjectsCard
               key={index}

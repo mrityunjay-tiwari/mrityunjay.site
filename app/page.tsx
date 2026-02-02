@@ -22,6 +22,8 @@ import Intro from "@/components/intro/intro";
 import {Container} from "@/components/layout/container";
 import Rays from "@/components/intro/rays";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const blogPosts = await getAllBlogPosts();
   return (

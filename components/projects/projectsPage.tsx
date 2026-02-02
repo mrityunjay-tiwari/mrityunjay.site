@@ -315,7 +315,7 @@ export default function ProjectsPage() {
       <hr className="w-full border-0.5 border-neutral-200 dark:border-neutral-700" />
       <div className="w-full flex flex-col items-start gap-3.5 mt-5">
         <div className="w-full flex flex-col items-start gap-0 mt-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:gap-12 gap-8">
             {PROJECT_DETAILS.map((project, index) => (
               <ProjectsCard
                 key={index}

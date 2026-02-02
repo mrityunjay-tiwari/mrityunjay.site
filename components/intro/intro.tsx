@@ -38,7 +38,7 @@ export default function Intro() {
         target="_parent"
       />{" "}
       with a focus on{" "}
-      <GlimpseText text="UX" image="https://ik.imagekit.io/mrityunjay/whatIsUX.png" title="What is UX?" description="In this blog I go one level deeper talking about UX, being much more than just design." href="https://vercel.com/blog/spring25-oss-program#kokonutui" target="_parent" /> , and
+      <GlimpseText text="UX" image="https://ik.imagekit.io/mrityunjay/whatIsUX.png" title="What is UX?" description="In this blog I go one level deeper talking about UX, being much more than just design." href="https://portfolio-283490989906.asia-south1.run.app/blogs/what-is-ux" target="_parent" /> , and
       contribute to open source. I love building products that solve real-world
       problems with an eye on both engineering and{" "}
       <GlimpseText

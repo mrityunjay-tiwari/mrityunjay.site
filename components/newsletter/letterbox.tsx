@@ -66,7 +66,7 @@ export default function Newsletter() {
 
   return (
  
-    <Card id="newsletter" className="justify-self-center text-center bg-neutral-950 dark:bg-black dark:border flex flex-col items-center gap-3 md:max-w-xl w-full max-w-[calc(100%-2.5rem)] mx-auto">
+    <Card id="newsletter" className="justify-self-center text-center bg-neutral-950 dark:bg-black dark:border flex flex-col items-center gap-3 sm:max-w-xl w-full max-w-[calc(100%-2.5rem)] mx-auto">
       {!joined ? (
         <>
           {/* icon */}

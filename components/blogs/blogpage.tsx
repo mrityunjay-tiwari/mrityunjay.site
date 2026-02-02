@@ -83,7 +83,7 @@ export default function BlogPage({blogPosts}: BlogsProps) {
             Thoughts
           </Badge>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:gap-12 gap-8">
           {filteredBlogs.map((blog) => (
             <BlogCard
               slug={blog.slug}

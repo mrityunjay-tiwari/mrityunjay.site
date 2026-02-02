@@ -71,9 +71,9 @@ export function SearchBox() {
         case "l":
           router.push("/blogs");
           break;
-        case "s":
-          router.push("/my-story");
-          break;
+        // case "s":
+        //   router.push("/my-story");
+        //   break;
         case "q":
           router.push("/contact");
           break;
@@ -298,7 +298,7 @@ export function SearchBox() {
 
   return (
     <>
-      <p className="text-muted-foreground text-sm hover:cursor-pointer scale-80 md:scale-100 origin-right">
+      <p className="text-muted-foreground text-sm hover:cursor-pointer scale-80 sm:scale-90 md:scale-100 origin-right">
         <Button
           className="shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] dark:shadow-[inset_0_2px_4px_rgba(255,255,255,0.12)] border-none  rounded-2xl flex items-center bg-transparent font-normal hover:cursor-pointer"
           variant={"outline"}
@@ -393,7 +393,7 @@ export function SearchBox() {
               <CommandShortcut>⌘L</CommandShortcut>
             </CommandItem>
 
-            <CommandItem
+            {/* <CommandItem
               onSelect={() =>
                 runCommand(commands.find((c) => c.id === "my-story")!)
               }
@@ -406,7 +406,7 @@ export function SearchBox() {
                 </span>
               </div>
               <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
+            </CommandItem> */}
 
             <CommandItem
               onSelect={() =>

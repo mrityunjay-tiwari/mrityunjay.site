@@ -4,6 +4,8 @@ import {
 } from "@/app/actions/contents";
 import IndividualBlogPage from "@/components/blogs/individualBlogPage";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProjectNote({params}: {params: {slug: string}}) {
   const getSlug = (await params).slug;
   const blogDetails = await getBlogPostOtherDetailsBySlug(getSlug.trim());

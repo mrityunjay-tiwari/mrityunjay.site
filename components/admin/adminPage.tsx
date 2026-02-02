@@ -17,6 +17,7 @@ interface AdminPageProps {
     }[];
 }
 
+
 export default function AdminPage({projectNotes, blogPosts}: AdminPageProps) {
   const router = useRouter();
   const createNewPersonalNote = async () => {

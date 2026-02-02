@@ -39,7 +39,7 @@ export default function BlogCard({
           className="w-full flex items-center justify-between rounded-lg"
         >
           <div className="flex flex-col items-center">
-            <div className="overflow-hidden min-w-full flex justify-center">
+            <div className="overflow-hidden min-w-full flex justify-center object-cover">
               {/* <IoBookSharp className="size-5 text-orange-300 hover:text-orange-400 hover:cursor-pointer" /> */}
               {blogImage}
             </div>

@@ -4,11 +4,11 @@ import PeopleCard from "./peopleCard";
 export default function PeoplePageDisplaySection() {
   return (
     <div className="mt-5">
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:gap-12 gap-8">
         <PeopleCard
           blogImage={
             <Image
-              src="https://ik.imagekit.io/mrityunjay/swamiji.jpg"
+              src="https://ik.imagekit.io/mrityunjay/people/swamiji.jpg?updatedAt=1769696771807"
               alt=""
               width={400}
               height={400}

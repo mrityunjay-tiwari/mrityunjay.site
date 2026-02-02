@@ -151,7 +151,7 @@ import {sans} from "@/lib/fonts";
 const menuItems = [
   {name: "Projects", href: "/projects"},
   {name: "Blogs", href: "/blogs"},
-  {name: "My Story", href: "/my-story"},
+  // {name: "My Story", href: "/my-story"},
 ];
 
 export const Navbar = () => {
@@ -189,7 +189,7 @@ export const Navbar = () => {
                   ᨒ
                 </Link>
 
-                <ul className="flex gap-3 md:gap-8 text-[12.5px] md:text-sm">
+                <ul className="flex gap-3 sm:gap-6 md:gap-8 text-[12.5px] md:text-sm">
                   {menuItems.map((item) => {
                     const isActive = pathname === item.href;
 

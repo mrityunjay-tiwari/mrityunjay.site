@@ -1,6 +1,8 @@
 import {getProjectNoteById, getProjectNoteBySlug, getProjectNoteOtherDetailsBySlug} from "@/app/actions/contents";
 import IndividualProjectNoteForReading from "@/components/projects/individualProjectNote";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProjectNote({params}: {params: {slug: string}}) {
   const projectNoteSlug = (await params).slug;
   const projectNoteContent = await getProjectNoteBySlug(projectNoteSlug);

@@ -3,6 +3,8 @@ import MeWritingBlogPost from "@/components/admin/blogPost";
 import ProjectNote from "@/components/admin/projectNote";
 import {Input} from "@/components/ui/input";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminBlogWritingPage({
   params,
 }: {
