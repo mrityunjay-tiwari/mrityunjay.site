@@ -226,7 +226,7 @@ export default function ProjectsCard({
                             className="text-neutral-500 dark:text-neutral-400"
                             size={10}
                           />
-                          This is Gemini Generated Summary
+                          This is an AI Generated Summary
                         </div>
                         <div
                           className="rounded-full bg-neutral-100 dark:bg-neutral-800 p-0.5 hover:cursor-pointer"
@@ -253,7 +253,7 @@ export default function ProjectsCard({
                           </div>
                         )}
                         {completion && (
-                          <div className="whitespace-pre-wrap">{completion}</div>
+                          <div className="whitespace-pre-wrap text-sm">{completion}</div>
                         )}
                         
                         {/* The Courage to Be Disliked explores how our happiness depends less

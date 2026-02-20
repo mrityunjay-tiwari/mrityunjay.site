@@ -331,9 +331,9 @@ export default function ChatBotOpenButton() {
                         <p>Online</p>
                       </TooltipContent>
                     </Tooltip>
-                    Powered by{" "}
+                    Available
                   </div>
-                  <Image
+                  {/* <Image
                     src={"https://ik.imagekit.io/mrityunjay/gemini.jpg"}
                     alt=""
                     width={35}
@@ -346,7 +346,7 @@ export default function ChatBotOpenButton() {
                     width={35}
                     height={35}
                     className="dark:inline hidden"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
