@@ -80,7 +80,7 @@ export default function Footer() {
           </Tooltip>
         </div>
       </div>
-      <Link href="/contacts">
+      <Link href="/contact">
         <div className="flex gap-1 items-center text-neutral-400 border-b-2 border-orange-100">
           <CircleDot className="md:size-3 size-2" absoluteStrokeWidth />
           <span className="text-xs md:text-base">

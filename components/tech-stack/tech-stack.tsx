@@ -34,7 +34,7 @@ const stack = [
   },
   {
     name: "Express.js",
-    image: "https://ik.imagekit.io/mrityunjay/express-js.jpg",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/express-js.jpg?updatedAt=1769916138327",
     link: "https://expressjs.com/",
   },
   {
@@ -84,7 +84,7 @@ const stack = [
   
   {
     name: "QdrantDB",
-    image: "https://ik.imagekit.io/mrityunjay/qdrant-brandmark-red.png",
+    image: "https://ik.imagekit.io/mrityunjay/TechStack/qdrant-brandmark-red.png?updatedAt=1769683596014",
     link: "https://qdrant.tech/documentation/",
   },
   {
