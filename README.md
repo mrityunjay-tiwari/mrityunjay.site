@@ -1,8 +1,6 @@
 # Mrityunjay's Portfolio
 
-![Built with Antigravity](https://img.shields.io/badge/Built%20with-Antigravity-4285F4?style=for-the-badge&logo=google)
-
-Welcome to the repository for my personal portfolio website, a showcase of my work, thoughts, and professional journey. This project is built with the latest web technologies to ensure performance, accessibility, and a premium user experience.
+Welcome to the repository for my personal portfolio website, a showcase of my work, thoughts, and professional journey. 
 
 ## Features
 
@@ -10,26 +8,23 @@ Welcome to the repository for my personal portfolio website, a showcase of my wo
 - **Blogs:** Technical articles and personal thoughts, categorized and optimized for reading.
 - **Interactive Chatbot:** An AI-powered assistant to answer questions about my work.
 - **Newsletter:** Subscription integration to keep in touch.
-- **Photography:** A bento-grid style gallery of my photography.
-- **Dynamic Content:** Real-time content updates using a database-backed CMS approach.
+- **Photography:** A bento-grid style gallery of my photography (In personal section).
+- **Dynamic Content:** Real-time content updates using a database-backed CMS approach (It is admin panel, only accessible to me).
 - **Responsive Design:** Fully responsive layout with dark mode support.
 - **Tech Stack Display:** A visual representation of the technologies I use.
 
 ## Tech Stack
 
-This project leverages a modern full-stack architecture:
-
 - **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) & [Tailwind Merge](https://github.com/dcastil/tailwind-merge)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/) & [Rough Notation](https://github.com/rough-stuff/rough-notation)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) 
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) 
 - **Database:** [PostgreSQL](https://www.postgresql.org/) with [Prisma ORM](https://www.prisma.io/)
 - **Authentication:** [NextAuth.js](https://next-auth.js.org/)
 - **AI Integration:** [Vercel AI SDK](https://sdk.vercel.ai/docs)
 - **Email:** [Resend](https://resend.com/)
 - **Editor:** [Tiptap](https://tiptap.dev/) (Headless)
-- **UI Components:** [Radix UI](https://www.radix-ui.com/) primitives
-- **Development Partner:** Antigravity — Architected, designed, and debugged using Google DeepMind's advanced agentic coding assistant.
+- **UI Components:** [Radix UI](https://www.radix-ui.com/) primitives and [ShadCN/UI](https://ui.shadcn.com/)
 
 ## Getting Started
 
@@ -38,7 +33,6 @@ To run this project locally, follow these steps:
 ### Prerequisites
 
 - Node.js (LTS version recommended)
-- pnpm (Package Manager)
 - PostgreSQL Database
 
 ### Installation
