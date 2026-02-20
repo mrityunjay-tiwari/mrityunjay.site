@@ -1,6 +1,4 @@
 import { PrismaClient } from '@/lib/generated/prisma/client';
-import { withAccelerate } from '@prisma/extension-accelerate' // you need not use @prisma/extension-accelerate if using neonDB
-
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
