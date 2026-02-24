@@ -22,6 +22,30 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mrityunjay Tiwari",
   description: "Portfolio website of Mrityunjay Tiwari",
+
+  metadataBase: new URL("https://mrityunjay.site"),
+
+  openGraph: {
+    title: "Mrityunjay Tiwari",
+    description: "Full Stack Developer building scalable and efficient web applications.",
+    url: "https://mrityunjay.site",
+    siteName: "Mrityunjay Tiwari",
+    images: [
+      {
+        url: "https://ik.imagekit.io/mrityunjay/image.png", 
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Mrityunjay Tiwari",
+    description: "Full Stack Developer building scalable and efficient web applications.",
+    images: ["https://ik.imagekit.io/mrityunjay/image.png"],
+  },
 };
 
 export default function RootLayout({
