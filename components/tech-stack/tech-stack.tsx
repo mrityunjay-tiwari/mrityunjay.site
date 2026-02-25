@@ -111,7 +111,7 @@ const stack = [
   {
     name: "Motion",
     image:
-      "https://ik.imagekit.io/mrityunjay/2a38d0a3-269e-45b1-bd76-d95cdc971579.png",
+      "https://ik.imagekit.io/mrityunjay/TechStack/2a38d0a3-269e-45b1-bd76-d95cdc971579.png?updatedAt=1769683561610",
     link: "https://motion.dev/docs/react",
   },
   
