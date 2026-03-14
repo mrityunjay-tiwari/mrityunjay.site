@@ -18,7 +18,8 @@ interface ReadingListProps {
   createdAt: string,
   readingTime: string
   slug: string,
-  link: string
+  link: string,
+
 }
 
 export default function BlogCard({
@@ -29,13 +30,15 @@ export default function BlogCard({
   createdAt,
   readingTime,
   slug,
-  link
+  link,
+
 }: ReadingListProps) {
   return (
     <div className="md:max-w-2xl hover:cursor-pointer w-full flex flex-col items-start rounded-xl shadow-[inset_0_1px_1px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] dark:bg-neutral-900 outline outline-neutral-100 dark:outline-neutral-900 hover:scale-101 transition-all duration-400">
       <>
         <Link
           href={link}
+     
           className="w-full flex items-center justify-between rounded-lg"
         >
           <div className="flex flex-col items-center">

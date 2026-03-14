@@ -146,91 +146,6 @@ const PROJECT_DETAILS = [
     ],
   },
   {
-    index: 5,
-    slug: "somi-conveyor-beltings-website",
-    videoLink: "https://www.youtube.com/watch?v=irCFZNTd28o",
-    thumbnailImage:
-      "https://ik.imagekit.io/mrityunjay/projects%20thumbnail/sommaire.png?updatedAt=1769851058061",
-    title: "Somi Conveyor Beltings",
-    description: "Website Revamp for Somi Conveyor Beltings.",
-    sourceCode: "https://github.com/mrityunjay-tiwari/somiinvestor",
-    liveDemo: "https://somiinvestor.vercel.app/",
-    imagesArray: [
-      {
-        name: "Next.js",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/nextjs.jpeg?updatedAt=1769859276503",
-      },
-      {
-        name: "Shadcn/UI",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/shadcn.png?updatedAt=1769684949468",
-      },
-      {
-        name: "Typescript",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/Typescript.svg.png?updatedAt=1769859234226",
-      },
-    ],
-  },
-  {
-    index: 6,
-    slug: "cult-council-iit-bhu",
-    videoLink: "https://www.youtube.com/watch?v=xiSfVten77g",
-    thumbnailImage:
-      "https://ik.imagekit.io/mrityunjay/projects%20thumbnail/cultcouncil.png?updatedAt=1769851057203",
-    title: "Cultural Council, IIT BHU",
-    description: "Official website of the Cultural Council, IIT BHU",
-    sourceCode: "https://github.com/mrityunjay-tiwari/cult-council",
-    liveDemo: "https://cult-council-mhwi.vercel.app/",
-    imagesArray: [
-      {
-        name: "React.js",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/react2.png?updatedAt=1769759925029",
-      },
-      {
-        name: "TailwindCSS",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/tailwind.png?updatedAt=1769684239645",
-      },
-      {
-        name: "Motion",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/2a38d0a3-269e-45b1-bd76-d95cdc971579.png?updatedAt=1769683561610",
-      },
-    ],
-  },
-  {
-    index: 7,
-    slug: "fondo-landing-page",
-    videoLink: "https://www.youtube.com/watch?v=PEDThweTMoM",
-    thumbnailImage:
-      "https://ik.imagekit.io/mrityunjay/projects%20thumbnail/fondo.png?updatedAt=1769851057367",
-    title: "Fondo Landing Page",
-    description: "Developed the landing page for Fondo",
-    optionalMessage: "This is only developed, not designed by me",
-    sourceCode: "https://github.com/mrityunjay-tiwari/fondo",
-    liveDemo: "https://fondo-omega.vercel.app/",
-    imagesArray: [
-      {
-        name: "Next.js",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/nextjs.jpeg?updatedAt=1769859276503",
-      },
-      {
-        name: "Shadcn/UI",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/shadcn.png?updatedAt=1769684949468",
-      },
-      {
-        name: "Typescript",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/Typescript.svg.png?updatedAt=1769859234226",
-      },
-    ],
-  },
-  {
     index: 8,
     slug: "portfolio",
     videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -301,14 +216,14 @@ export default function ProjectsPage() {
             `${marker.className} text-3xl md:text-4xl font-medium text-neutral-500 dark:text-neutral-200 border-b-4 border-orange-100 dark:border-orange-200`,
           )}
         >
-          my projects.
+          products.
         </h2>
         <h2
           className={cn(
             `${sans.className} flex text-center text-neutral-500 dark:text-neutral-300`,
           )}
         >
-          all my works - my projects.
+          all my works.
         </h2>
         {/* What other aspects exite me - Finance, Product and life in general. */}
       </div>

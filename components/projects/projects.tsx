@@ -153,7 +153,7 @@ export default function Projects() {
   const router = useRouter();
   return (
     <div className="flex flex-col items-start justify-start mb-14">
-      <SectionTitle subtitle="featured" title="projects." />
+      <SectionTitle subtitle="featured" title="products." />
       <motion.div
         className="w-full flex flex-col items-start gap-3.5 mt-5"
       >
