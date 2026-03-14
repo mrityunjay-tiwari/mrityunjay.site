@@ -90,7 +90,7 @@ export default function ProjectsCard({
                     videoSrc={videoLink}
                     thumbnailSrc={thumbnailImage}
                     thumbnailAlt="Hero Video"
-                    playButtonHidden={true}
+                    playButtonHidden={false}
                   />
                   <VideoDialogForProjectCard
                     className="hidden dark:block"
@@ -98,7 +98,7 @@ export default function ProjectsCard({
                     videoSrc={videoLink}
                     thumbnailSrc={thumbnailImage}
                     thumbnailAlt="Hero Video"
-                    playButtonHidden={true}
+                    playButtonHidden={false}
                   />
                 </div>
               </div>
