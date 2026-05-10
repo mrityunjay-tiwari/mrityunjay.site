@@ -169,10 +169,13 @@ export default function IndividualProjectNoteForReading({
         <BottomFooterProjectNotesCardCarousel />
       </div>
       <div className="mt-10 flex max-w-xl items-center justify-center gap-5 mb-20">
-        <Button className="rounded-full shadow hover:cursor-pointer">
-          View All Projects
-          <ArrowUpRightIcon />
-        </Button>
+        <Link href="/projects">
+          <Button className="rounded-full shadow hover:cursor-pointer">
+            View All Projects
+            <ArrowUpRightIcon />
+          </Button>
+        </Link>
+        <Link href="/contact">
         <ParticleButton
           className="rounded-full shadow hover:cursor-pointer dark:bg-neutral-700"
           particleClass="bg-black dark:bg-white"
@@ -180,6 +183,7 @@ export default function IndividualProjectNoteForReading({
           Get in touch
           <CursorClickIcon />
         </ParticleButton>
+        </Link>
       </div>
     </motion.div>
   );
