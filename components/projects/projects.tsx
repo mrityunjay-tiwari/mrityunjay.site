@@ -15,7 +15,7 @@ const PROJECT_DETAILS = [
   {
     index: 1,
     title: "DocuMind",
-    description: "AI-powered PDF documents study workspace for chat, flashcards, quizzes, and mind maps.",
+    description: "Structured PDF intelligence platform for messy documents with semantic retrieval, flashcards, quizzes, and mind maps.",
     sourceCode: "https://github.com/mrityunjay-tiwari/summarize",
     liveDemo: "https://documind.fun/",
     imagesArray: [
@@ -66,7 +66,7 @@ const PROJECT_DETAILS = [
       },
     ],
     slug: "documind",
-    videoLink: "https://www.youtube.com/watch?v=2xSFMNGq_5Q",
+    videoLink: "https://youtu.be/WX8QpJborDU",
     thumbnailImage:
       "https://ik.imagekit.io/mrityunjay/portfolio/documind.fun"
   },
@@ -74,7 +74,7 @@ const PROJECT_DETAILS = [
     index: 2,
 
     slug: "prepnova",
-    videoLink: "https://www.youtube.com/watch?v=QAZbZ2S7hFw",
+    videoLink: "https://youtu.be/WX8QpJborDU",
     thumbnailImage:
       "https://ik.imagekit.io/mrityunjay/portfolio/prepnova.site?updatedAt=1778377471499",
     title: "PrepNova",
@@ -103,7 +103,7 @@ const PROJECT_DETAILS = [
           "https://ik.imagekit.io/mrityunjay/portfolio/stream%20logo.png",
       },
       {
-        name: "PostgreSQL + pgvector",
+        name: "PostgreSQL",
         image:
           "https://ik.imagekit.io/mrityunjay/OT-integrations-logo-postgre-sql.png?updatedAt=1768855375158",
       },
