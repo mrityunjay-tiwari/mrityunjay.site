@@ -54,10 +54,11 @@ export default function Intro() {
      
           <GlimpseText
           text="AI Native applications."
-          image="https://ik.imagekit.io/mrityunjay/projects%20thumbnail/summarize.vercel.com.png?updatedAt=1769864052675"
-          title="Summarize"
-          description="In this project of mine, I did setup a RAG pipeline to create flash cards from any pdf."
-          href="https://summarize-omega.vercel.app/"
+          image="https://ik.imagekit.io/mrityunjay/portfolio/documind.fun"
+          title="DocuMind"
+          description="It helps you unlock the full potential of your PDFs. 
+          It’s your smart companion that transforms static documents into interactive learning tools."
+          href="https://documind.fun/"
           target="_blank"
         />
         

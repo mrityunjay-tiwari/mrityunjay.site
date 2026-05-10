@@ -27,67 +27,88 @@ export const MRITYUNJAY_AI_SYSTEM_PROMPT= `
         iii) Worked on community feature to share & clone real-time DeFi strategies, driving retention & open-source adoption
         iv) Applied Octalysis framework to design speculation cycle, fueling 600+ waitlist sign-ups pre-launch on Sonic ecosystem
     8. Projects: 
-        1. YourBrain
-            Details about YourBrain - Website: https://yourbrain.vercel.app/, GitHub: https://github.com/mrityunjay-tiwari/your-brain-fe
+        1. DocuMind
+            Details about DocuMind - Website: https://documind.fun/, GitHub: https://github.com/mrityunjay-tiwari/summarize (Python Microservice for structured PDF data : https://github.com/mrityunjay-tiwari/structured-pdf-data)
             i) A place to smart save all the bookmarks at one place.
-            (Note : I am working on it’s Version 2 as my first SaaS, more on it later.)
-
-            Overview : 
-                You can custom save (with embed preview and custom notes with a lot of features) all your bookmarks at one place to smart retrieve it for further use.
-            Why I built It ? 
-                We scroll through web and come across multiple type of contents some of them we want to save so we have three options - 
-                Either save it on their website (as bookmark),
-                Save to your Notes app,
-                Save to the infinite scroll of WhatsApp you call as (You).
-            But all three has their demerits :
-                All the websites do not provide bookmark option.
-                The notes app was not made for this purpose.
-                The whatApp chat was not made for this and becomes clumsy.
-            And then when you want to use any information, you either not recall it properly, you barely remember something about it and not where you saw it, and you lost another 15 minutes searching and getting nothing else than frustration.
-            And above all, internet doesn’t provide you one YOUR place where you can self reflect and custom save the things that represent YOU.
-            That’s exactly what I was facing and hence I built YourBrain.
-            What all you can do 
-                Custom Notes - You can save any link with your custom notes (custom title and description).
-                Editable - You can edit your content as and when you want to.
-                Embed Preview - You get preview of the link you did embed for a much better User Experience.
-                Shareability - You can share individual brain (Each link with their custom note is like a card, which I call Brain), or the entire dashboard to your friend where they can access that without any login or Sign Up requirement. 
-                Search - Search through Your database to get the exact required content.
-                Categorization - Keeps the content type wise to have super clean structure. 
             
-            Tech Stack : NodeJS, Express, MongoDB, ReactJS
-            Future Plan : I am working on it as my first SaaS with it’s full version having the following features :
-                All the features of Version 1
-                Links from any website can be added (Currently you can add only YouTube and Medium links).
-                Custom Categorization into projects with being able to add as many Brains as you want in each project.
-                Each project will have respective ProjectNote.
-                There will be a chatbot which will have context of all the content from the websites the links of whom you have added, hereby you will have access to control the exact context however your requirement is.
-                I am building this in public, follow me on X to know more !
+                DocuMind is an AI-powered PDF learning platform that turns static PDF documents (even scanned and unstructured including many sections tables etc. ) into interactive study material. 
+                A user can upload a PDF and instantly work with it in multiple ways: chat with the PDF, generate flashcards, 
+                create quizzes, and build mind maps. The core idea is to transform textbooks, lecture notes, research papers, 
+                reports, and study PDFs into something searchable, structured, and easier to revise from.
 
-        2. Summarize
-            Website Link : https://summarize-pdf.vercel.app/
-            Source Code Link : https://github.com/mrityunjay-tiwari/summarize-pdf
+                I built this project because PDFs are one of the most common formats for learning, but they are still mostly passive. 
+                Students often spend hours scrolling, highlighting, searching, making notes, and manually creating revision material. 
+                DocuMind reduces that friction by making the document feel like an interactive study workspace instead of a flat file.
+
+
+                The main problem it solves is information overload inside dense PDFs. Users may know that an answer exists somewhere 
+                in the document, but finding it, understanding it, and converting it into revision material takes time. DocuMind 
+                helps by extracting document structure, preserving context like headings and page numbers, and using AI to generate 
+                useful learning outputs. Chat supports direct questioning, flashcards help with active recall, quizzes test 
+                understanding, and mind maps show how concepts connect.
+
+                The tech stack includes Next.js, React, TypeScript, Tailwind CSS, Prisma, PostgreSQL, pgvector, NextAuth, UploadThing,
+                 FastAPI, Docling, OpenRouter, and the Vercel AI SDK. One of the smartest parts of the implementation is the use of 
+                 the Vercel AI SDK as the orchestration layer for AI features. It powers streaming chat responses, embeddings, 
+                 model-message conversion, tool calling for document search, and structured generation. For features like flashcards 
+                 and quizzes, the SDK’s structured object generation helps force the model to return the exact JSON shape required by 
+                 the UI, such as ordered flashcard arrays, quiz questions, options, correct answers, and explanations. This avoids 
+                 fragile text parsing and makes the generated output directly usable in interactive components.
+
+                A major part of the backend is the Python FastAPI microservice powered by Docling. This service performs structured 
+                PDF data retrieval instead of basic text extraction. Docling converts PDFs into structured Markdown and document-aware
+                 chunks while preserving metadata such as headings, page numbers, section types, and file information. It uses 
+                 HybridChunker with the Nvidia Llama Nemotron embedding tokenizer, so chunks are created intelligently based on 
+                 document structure and token limits. This makes retrieval much more accurate than blindly splitting text.
+
+                Compared to NotebookLM, DocuMind is more focused on study workflows and generated learning outputs. NotebookLM is 
+                strong for source-grounded chat, but DocuMind adds flashcards, quizzes, mind maps, progress-oriented document 
+                projects, and a custom structured parsing pipeline. It is not just a document chat tool; it is a complete 
+                PDF-to-study-workspace system built around how students actually revise, test themselves, and understand content.
+
+                Future Plans 
+                - For V2 : User can upload multiple PDFs.
+                - For V3 : Allowing multiple file formats like Excel Sheets, Word Files etc.
+
+        2. PrepNova
+            Website Link : https://prepnova.site/
+            Source Code Link : https://github.com/mrityunjay-tiwari/interview-tool (Python Repository for Interview Orchestration : https://github.com/mrityunjay-tiwari/stream-interview-be)
             Overview 
-                Hereby, you can generate flash cards containing short summary snippets from PDF in one click.
+                This project is an AI-powered mock interview platform designed to make technical interview preparation more realistic,
+                 adaptive, and measurable over time. Instead of behaving like a generic chatbot, it simulates an actual interview 
+                 system: users can choose their target role, seniority level, and interview structure, then take a live AI-driven 
+                 interview that gives per-answer feedback, a final structured report, and progress tracking across multiple sessions. 
+                 The goal is not just to ask questions, but to recreate the pressure, flow, and decision-making rhythm of a real 
+                 interview while still giving learners actionable guidance.
 
-                Why I built this ?
-                    - During exams it is tough to revise all the PDFs and presentations in one night, hence I used to make snippets of flash cards manually during school days, hereby I thought to automate the process using AI. It has been proven beneficial for me and my friends during exams.
-                    - I wanted to learn the whole cycle of how to take input from user save it in store (upload things in my case) and the whole RAG pipeline of indexing, chunking and retrieval of relevant documents to then be processed by the AI to flash cards which contain all the relevant information only.
+                I built this project because most interview-prep solutions felt incomplete in one of two ways: either they were 
+                static question banks with no real interaction, or they were simple LLM chat interfaces that lacked structure, 
+                realism, and meaningful progress tracking. Candidates often know the content but struggle with interview delivery, 
+                adaptability under pressure, and understanding where they are actually improving over time. I wanted to build 
+                something that bridges that gap by combining real-time interaction, backend-controlled interview flow, live 
+                evaluation, and persistent learning memory in one cohesive product.
 
-                What all you can do
-                    - You just need to upload the PDF and all the process will be done by the backend. 
-               
-                Tech Stack
-                    - Next.js
-                    - PostgreSQL
-                    - Prisma
-                    - Auth.js
-                    - LangChain
+                The frontend is built with Next.js, React, TypeScript, Tailwind CSS, and shadcn/ui, which together provide a fast and 
+                flexible interface for the landing page, interview setup, live session UI, reports, and progress dashboard. The 
+                real-time interview session uses Stream Video for session handling. On the backend, FastAPI and Python power the 
+                interview state engine, which orchestrates the full interview lifecycle: section timing, transitions, adaptive 
+                probing, current question state, and role/seniority-aware flow control. For AI capabilities, the system integrates 
+                STT, TTS, and LLM-based evaluation and report generation through Deepgram, OpenRouter, and structured prompting. 
+                Reports and user progress are persisted using Prisma with PostgreSQL.
 
-                Future Plans
-                    - To be able to chunk and work with scanned document.
-                    - To be able to properly understand the complex PDFs including tables, images etc.
-                    - Work with YouTube video links.
-                    - Should able to extract content from link of any public available data and generate flash card from it.
+                The project solves several practical problems: unrealistic solo practice, generic AI prep that does not adapt to 
+                role or seniority, vague feedback, and the lack of long-term visibility into progress. It is also designed to be 
+                easily merged into larger ed-tech platforms because it can function as a modular interview-prep layer. Its 
+                architecture supports integration as a feature within bootcamps, placement-prep systems, online learning products, or 
+                engineering upskilling platforms by plugging into their user, content, or analytics ecosystem while still keeping 
+                interview orchestration self-contained.
+
+                What makes it stronger than many existing tools is the system design behind it. The backend acts as the source of 
+                truth for the interview flow rather than leaving timing and progression to the frontend. The platform also makes 
+                thoughtful engineering decisions such as client-side posture analysis to reduce backend load and protect privacy, 
+                structured report generation instead of transcript-heavy output, and progress metrics that unlock only when enough 
+                interview history exists. Together, these decisions make the product more realistic, more scalable, and more useful 
+                for serious interview preparation.
         
         3. Medium-Info-API : 
                 Website Link : https://embed-medium.vercel.app/
@@ -295,65 +316,86 @@ export const MRITYUNJAY_AI_SYSTEM_PROMPT= `
 
 export const PROJECT_SYMMARY_SYSTEM_PROMPT = `
         Projects: 
-        1. YourBrain
-            Details about YourBrain - 
+        1. DocuMind
             i) A place to smart save all the bookmarks at one place.
-            (Note : I am working on it’s Version 2 as my first SaaS, more on it later.)
-
-            Overview : 
-                You can custom save (with embed preview and custom notes with a lot of features) all your bookmarks at one place to smart retrieve it for further use.
-            Why I built It ? 
-                We scroll through web and come across multiple type of contents some of them we want to save so we have three options - 
-                Either save it on their website (as bookmark),
-                Save to your Notes app,
-                Save to the infinite scroll of WhatsApp you call as (You).
-            But all three has their demerits :
-                All the websites do not provide bookmark option.
-                The notes app was not made for this purpose.
-                The whatApp chat was not made for this and becomes clumsy.
-            And then when you want to use any information, you either not recall it properly, you barely remember something about it and not where you saw it, and you lost another 15 minutes searching and getting nothing else than frustration.
-            And above all, internet doesn’t provide you one YOUR place where you can self reflect and custom save the things that represent YOU.
-            That’s exactly what I was facing and hence I built YourBrain.
-            What all you can do 
-                Custom Notes - You can save any link with your custom notes (custom title and description).
-                Editable - You can edit your content as and when you want to.
-                Embed Preview - You get preview of the link you did embed for a much better User Experience.
-                Shareability - You can share individual brain (Each link with their custom note is like a card, which I call Brain), or the entire dashboard to your friend where they can access that without any login or Sign Up requirement. 
-                Search - Search through Your database to get the exact required content.
-                Categorization - Keeps the content type wise to have super clean structure. 
             
-            Tech Stack : NodeJS, Express, MongoDB, ReactJS
-            Future Plan : I am working on it as my first SaaS with it’s full version having the following features :
-                All the features of Version 1
-                Links from any website can be added (Currently you can add only YouTube and Medium links).
-                Custom Categorization into projects with being able to add as many Brains as you want in each project.
-                Each project will have respective ProjectNote.
-                There will be a chatbot which will have context of all the content from the websites the links of whom you have added, hereby you will have access to control the exact context however your requirement is.
-                I am building this in public, follow me on X to know more !
+                DocuMind is an AI-powered PDF learning platform that turns static PDF documents (even scanned and unstructured including many sections tables etc. ) into interactive study material. 
+                A user can upload a PDF and instantly work with it in multiple ways: chat with the PDF, generate flashcards, 
+                create quizzes, and build mind maps. The core idea is to transform textbooks, lecture notes, research papers, 
+                reports, and study PDFs into something searchable, structured, and easier to revise from.
 
-        2. Summarize
+                I built this project because PDFs are one of the most common formats for learning, but they are still mostly passive. 
+                Students often spend hours scrolling, highlighting, searching, making notes, and manually creating revision material. 
+                DocuMind reduces that friction by making the document feel like an interactive study workspace instead of a flat file.
+
+
+                The main problem it solves is information overload inside dense PDFs. Users may know that an answer exists somewhere 
+                in the document, but finding it, understanding it, and converting it into revision material takes time. DocuMind 
+                helps by extracting document structure, preserving context like headings and page numbers, and using AI to generate 
+                useful learning outputs. Chat supports direct questioning, flashcards help with active recall, quizzes test 
+                understanding, and mind maps show how concepts connect.
+
+                The tech stack includes Next.js, React, TypeScript, Tailwind CSS, Prisma, PostgreSQL, pgvector, NextAuth, UploadThing,
+                 FastAPI, Docling, OpenRouter, and the Vercel AI SDK. One of the smartest parts of the implementation is the use of 
+                 the Vercel AI SDK as the orchestration layer for AI features. It powers streaming chat responses, embeddings, 
+                 model-message conversion, tool calling for document search, and structured generation. For features like flashcards 
+                 and quizzes, the SDK’s structured object generation helps force the model to return the exact JSON shape required by 
+                 the UI, such as ordered flashcard arrays, quiz questions, options, correct answers, and explanations. This avoids 
+                 fragile text parsing and makes the generated output directly usable in interactive components.
+
+                A major part of the backend is the Python FastAPI microservice powered by Docling. This service performs structured 
+                PDF data retrieval instead of basic text extraction. Docling converts PDFs into structured Markdown and document-aware
+                 chunks while preserving metadata such as headings, page numbers, section types, and file information. It uses 
+                 HybridChunker with the Nvidia Llama Nemotron embedding tokenizer, so chunks are created intelligently based on 
+                 document structure and token limits. This makes retrieval much more accurate than blindly splitting text.
+
+                Compared to NotebookLM, DocuMind is more focused on study workflows and generated learning outputs. NotebookLM is 
+                strong for source-grounded chat, but DocuMind adds flashcards, quizzes, mind maps, progress-oriented document 
+                projects, and a custom structured parsing pipeline. It is not just a document chat tool; it is a complete 
+                PDF-to-study-workspace system built around how students actually revise, test themselves, and understand content.
+
+                Future Plans 
+                - For V2 : User can upload multiple PDFs.
+                - For V3 : Allowing multiple file formats like Excel Sheets, Word Files etc.
+
+        2. PrepNova
             Overview 
-                Hereby, you can generate flash cards containing short summary snippets from PDF in one click.
+                Overview 
+                This project is an AI-powered mock interview platform designed to make technical interview preparation more realistic,
+                 adaptive, and measurable over time. Instead of behaving like a generic chatbot, it simulates an actual interview 
+                 system: users can choose their target role, seniority level, and interview structure, then take a live AI-driven 
+                 interview that gives per-answer feedback, a final structured report, and progress tracking across multiple sessions. 
+                 The goal is not just to ask questions, but to recreate the pressure, flow, and decision-making rhythm of a real 
+                 interview while still giving learners actionable guidance.
 
-                Why I built this ?
-                    - During exams it is tough to revise all the PDFs and presentations in one night, hence I used to make snippets of flash cards manually during school days, hereby I thought to automate the process using AI. It has been proven beneficial for me and my friends during exams.
-                    - I wanted to learn the whole cycle of how to take input from user save it in store (upload things in my case) and the whole RAG pipeline of indexing, chunking and retrieval of relevant documents to then be processed by the AI to flash cards which contain all the relevant information only.
+                I built this project because most interview-prep solutions felt incomplete in one of two ways: either they were 
+                static question banks with no real interaction, or they were simple LLM chat interfaces that lacked structure, 
+                realism, and meaningful progress tracking. Candidates often know the content but struggle with interview delivery, 
+                adaptability under pressure, and understanding where they are actually improving over time. I wanted to build 
+                something that bridges that gap by combining real-time interaction, backend-controlled interview flow, live 
+                evaluation, and persistent learning memory in one cohesive product.
 
-                What all you can do
-                    - You just need to upload the PDF and all the process will be done by the backend. 
-               
-                Tech Stack
-                    - Next.js
-                    - PostgreSQL
-                    - Prisma
-                    - Auth.js
-                    - LangChain
+                The frontend is built with Next.js, React, TypeScript, Tailwind CSS, and shadcn/ui, which together provide a fast and 
+                flexible interface for the landing page, interview setup, live session UI, reports, and progress dashboard. The 
+                real-time interview session uses Stream Video for session handling. On the backend, FastAPI and Python power the 
+                interview state engine, which orchestrates the full interview lifecycle: section timing, transitions, adaptive 
+                probing, current question state, and role/seniority-aware flow control. For AI capabilities, the system integrates 
+                STT, TTS, and LLM-based evaluation and report generation through Deepgram, OpenRouter, and structured prompting. 
+                Reports and user progress are persisted using Prisma with PostgreSQL.
 
-                Future Plans
-                    - To be able to chunk and work with scanned document.
-                    - To be able to properly understand the complex PDFs including tables, images etc.
-                    - Work with YouTube video links.
-                    - Should able to extract content from link of any public available data and generate flash card from it.
+                The project solves several practical problems: unrealistic solo practice, generic AI prep that does not adapt to 
+                role or seniority, vague feedback, and the lack of long-term visibility into progress. It is also designed to be 
+                easily merged into larger ed-tech platforms because it can function as a modular interview-prep layer. Its 
+                architecture supports integration as a feature within bootcamps, placement-prep systems, online learning products, or 
+                engineering upskilling platforms by plugging into their user, content, or analytics ecosystem while still keeping 
+                interview orchestration self-contained.
+
+                What makes it stronger than many existing tools is the system design behind it. The backend acts as the source of 
+                truth for the interview flow rather than leaving timing and progression to the frontend. The platform also makes 
+                thoughtful engineering decisions such as client-side posture analysis to reduce backend load and protect privacy, 
+                structured report generation instead of transcript-heavy output, and progress metrics that unlock only when enough 
+                interview history exists. Together, these decisions make the product more realistic, more scalable, and more useful 
+                for serious interview preparation.
         
         3. Medium-Info-API :
                 NPM Package to scrape medium article effeciently

@@ -11,68 +11,45 @@ import {CursorClickIcon} from "../hover-icons/click";
 const PROJECT_DETAILS = [
   {
     index: 1,
-    slug: "your-brain",
-    videoLink: "https://www.youtube.com/watch?v=2xSFMNGq_5Q",
-    thumbnailImage:
-      "https://ik.imagekit.io/mrityunjay/projects%20thumbnail/yourbrain.png",
-    title: "Your Brain",
-    description: "Smart bookmark store for your web scroll.",
-    optionalMessage: "(Working on it's Version 2.0)",
-    sourceCode: "https://github.com/mrityunjay-tiwari/your-brain-fe",
-    liveDemo: "https://yourbrain.vercel.app/",
+    title: "DocuMind",
+    description: "AI-powered PDF documents study workspace for chat, flashcards, quizzes, and mind maps.",
+    sourceCode: "https://github.com/mrityunjay-tiwari/summarize",
+    liveDemo: "https://documind.fun/",
     imagesArray: [
       {
-        name: "Node.js",
+        name: "NextJs",
         image:
           "https://ik.imagekit.io/mrityunjay/TechStack/nodejs.png?updatedAt=1769760522055",
       },
       {
-        name: "MongoDB",
+        name: "TypeScript",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/mongodb.png?updatedAt=1769684316245",
+          "https://ik.imagekit.io/mrityunjay/portfolio/typescript.svg?updatedAt=1778095120275",
       },
       {
-        name: "Express.js",
+        name: "Shadcn/UI",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/express-js.jpg?updatedAt=1769916138327",
+          "https://ik.imagekit.io/mrityunjay/TechStack/shadcn.png?updatedAt=1769684949468",
       },
       {
-        name: "React.js",
+        name: "Vercel AI SDK",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/react2.png?updatedAt=1769759925029",
+          "https://ik.imagekit.io/mrityunjay/TechStack/vercel-logo.png?updatedAt=1769763813364",
       },
       {
-        name: "Typescript",
+        name: "FastAPI",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/Typescript.svg.png?updatedAt=1769859234226",
-      },
-    ],
-  },
-  {
-    index: 2,
-    slug: "summarize",
-    videoLink: "https://www.youtube.com/watch?v=QAZbZ2S7hFw",
-    thumbnailImage:
-      "https://ik.imagekit.io/mrityunjay/projects%20thumbnail/summarize.vercel.com.png?updatedAt=1769864052675",
-    title: "Summarize",
-    description: "Generate instant flash cards from your PDF !",
-    sourceCode: "https://github.com/mrityunjay-tiwari/summarize",
-    liveDemo: "https://summarize-omega.vercel.app/",
-    imagesArray: [
-      {
-        name: "Next.js",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/nextjs.jpeg?updatedAt=1769859276503",
+          "https://ik.imagekit.io/mrityunjay/TechStack/fastapi%20logo.webp",
       },
       {
-        name: "PostgreSQL",
+        name: "Docling",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/postgreSQL.png?updatedAt=1769683921093",
+          "https://ik.imagekit.io/mrityunjay/TechStack/docling",
       },
       {
-        name: "Auth.js",
+        name: "PostgreSQL + pgvector",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/auth.js.png?updatedAt=1769758909591",
+          "https://ik.imagekit.io/mrityunjay/OT-integrations-logo-postgre-sql.png?updatedAt=1768855375158",
       },
       {
         name: "Prisma",
@@ -80,15 +57,68 @@ const PROJECT_DETAILS = [
           "https://ik.imagekit.io/mrityunjay/TechStack/prisma-square.png?updatedAt=1769760876751",
       },
       {
-        name: "Langchain",
+        name: "NextAuth",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/langchain.png?updatedAt=1769859024789",
+          "https://ik.imagekit.io/mrityunjay/TechStack/auth.js.png?updatedAt=1769758909591",
+      },
+    ],
+    slug: "documind",
+    videoLink: "https://www.youtube.com/watch?v=2xSFMNGq_5Q",
+    thumbnailImage:
+      "https://ik.imagekit.io/mrityunjay/portfolio/documind.fun"
+  },
+  {
+    index: 2,
+
+    slug: "prepnova",
+    videoLink: "https://www.youtube.com/watch?v=QAZbZ2S7hFw",
+    thumbnailImage:
+      "https://ik.imagekit.io/mrityunjay/portfolio/prepnova.site?updatedAt=1778377471499",
+    title: "PrepNova",
+    description: "AI-powered mock interviews with adaptive questioning, live feedback, structured reports, and long-term progress tracking.",
+    sourceCode: "https://github.com/mrityunjay-tiwari/interview-tool",
+    liveDemo: "https://prepnova.site/",
+    imagesArray: [
+      {
+        name: "NextJs",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/nodejs.png?updatedAt=1769760522055",
       },
       {
-        name: "Typescript",
+        name: "TypeScript",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/Typescript.svg.png?updatedAt=1769859234226",
+          "https://ik.imagekit.io/mrityunjay/portfolio/typescript.svg?updatedAt=1778095120275",
       },
+      {
+        name: "FastAPI",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/fastapi%20logo.webp",
+      },
+      {
+        name: "Stream",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/stream%20logo.png",
+      },
+      {
+        name: "PostgreSQL + pgvector",
+        image:
+          "https://ik.imagekit.io/mrityunjay/OT-integrations-logo-postgre-sql.png?updatedAt=1768855375158",
+      },
+      {
+        name: "Prisma",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/prisma-square.png?updatedAt=1769760876751",
+      },
+      {
+        name: "MediaPipe",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/mediapipe%20logo.png",
+      },
+      {
+        name: "NextAuth",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/auth.js.png?updatedAt=1769758909591",
+      }
     ],
   },
   {

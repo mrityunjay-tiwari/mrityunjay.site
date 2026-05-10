@@ -24,7 +24,7 @@ const stack = [
   },
   {
     name: "Typescript",
-    image: "https://ik.imagekit.io/mrityunjay/Typescript.svg.png",
+    image: "https://ik.imagekit.io/mrityunjay/portfolio/typescript.svg",
     link: "https://www.typescriptlang.org/docs/",
   },
   {
