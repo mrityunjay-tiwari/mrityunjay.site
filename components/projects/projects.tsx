@@ -20,9 +20,9 @@ const PROJECT_DETAILS = [
     liveDemo: "https://documind.fun/",
     imagesArray: [
       {
-        name: "NextJs",
+        name: "Next.js",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/nodejs.png?updatedAt=1769760522055",
+          "https://ik.imagekit.io/mrityunjay/portfolio/nextjs.png",
       },
       {
         name: "TypeScript",
@@ -83,9 +83,9 @@ const PROJECT_DETAILS = [
     liveDemo: "https://prepnova.site/",
     imagesArray: [
       {
-        name: "NextJs",
+        name: "Next.js",
         image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/nodejs.png?updatedAt=1769760522055",
+          "https://ik.imagekit.io/mrityunjay/portfolio/nextjs.png",
       },
       {
         name: "TypeScript",
