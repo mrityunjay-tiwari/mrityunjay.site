@@ -84,7 +84,7 @@ export default function IntroCard() {
             <TooltipContent>
               <div className="flex gap-1" ref={ref}>
                 <span className="text-orange-300">˗`ˎ</span>
-                {` Available for freelance work or full-time roles `}
+                {` Available for cheerful discussions or working together`}
                 <span className="text-orange-300">ˎˊ˗</span>
               </div>
             </TooltipContent>
