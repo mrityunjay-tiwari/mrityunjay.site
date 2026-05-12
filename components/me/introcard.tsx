@@ -33,7 +33,7 @@ export default function IntroCard() {
           {`I'm`}{" "}
           <span
             className={cn(
-              `hover:text-orange-300 font-medium hover:transition-all hover:duration-300 ${marker.className}`,
+              `text-orange-300 font-medium hover:transition-all hover:duration-300 ${marker.className}`,
             )}
           >
             Mrityunjay.
