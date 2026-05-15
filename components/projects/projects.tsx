@@ -66,7 +66,7 @@ const PROJECT_DETAILS = [
       },
     ],
     slug: "documind",
-    videoLink: "https://youtu.be/WX8QpJborDU",
+    videoLink: "https://youtu.be/34E2xjd81cQ",
     thumbnailImage:
       "https://ik.imagekit.io/mrityunjay/portfolio/documind.fun"
   },

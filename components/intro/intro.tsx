@@ -30,7 +30,7 @@ export default function Intro() {
     >
       I build{" "}
       <GlimpseText
-        text="interactive web apps"
+        text="web apps"
         image="https://ik.imagekit.io/mrityunjay/interactiveWebApps.png"
         title="My Projects"
         description="A collection of projects I've worked on."
@@ -38,9 +38,16 @@ export default function Intro() {
         target="_parent"
       />{" "}
       with a focus on{" "}
-      <GlimpseText text="UX" image="https://ik.imagekit.io/mrityunjay/whatIsUX.png" title="What is UX?" description="In this blog I go one level deeper talking about UX, being much more than just design." href="https://portfolio-283490989906.asia-south1.run.app/blogs/what-is-ux" target="_parent" /> , and
-      contribute to open source. I love building products that solve real-world
-      problems with an eye on both engineering and{" "}
+      <GlimpseText
+        text="UX"
+        image="https://ik.imagekit.io/mrityunjay/whatIsUX.png"
+        title="What is UX?"
+        description="In this blog I go one level deeper talking about UX, being much more than just design."
+        href="https://portfolio-283490989906.asia-south1.run.app/blogs/what-is-ux"
+        target="_parent"
+      />
+      . I love building products that solve real-world problems with an eye on
+      both engineering and{" "}
       <GlimpseText
         text="product thinking."
         image="https://ik.imagekit.io/mrityunjay/product-thinking.png"
@@ -51,8 +58,7 @@ export default function Intro() {
       />
       <div className="flex flex-col md:flex-row md:items-center gap-1">
         Currently, learning and building{" "}
-     
-          <GlimpseText
+        <GlimpseText
           text="AI Native applications."
           image="https://ik.imagekit.io/mrityunjay/portfolio/documind.fun"
           title="DocuMind"
@@ -61,7 +67,6 @@ export default function Intro() {
           href="https://documind.fun/"
           target="_blank"
         />
-        
       </div>
     </motion.div>
   );
