@@ -28,7 +28,7 @@ export default function Intro() {
         `${sans.className} mb-5 text-neutral-500 dark:text-neutral-300 md:text-lg leading-8`,
       )}
     >
-      I build{" "}
+      I build production-ready{" "}
       <GlimpseText
         text="web apps"
         image="https://ik.imagekit.io/mrityunjay/interactiveWebApps.png"
@@ -39,7 +39,7 @@ export default function Intro() {
       />{" "}
       with a focus on{" "}
       <GlimpseText
-        text="UX"
+        text="backend-first UX"
         image="https://ik.imagekit.io/mrityunjay/whatIsUX.png"
         title="What is UX?"
         description="In this blog I go one level deeper talking about UX, being much more than just design."
