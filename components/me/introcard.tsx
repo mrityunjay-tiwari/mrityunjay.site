@@ -43,7 +43,7 @@ export default function IntroCard() {
           className={cn(
             `${sans.className} text-neutral-400 text-[12px] sm:text-base md:text-lg md:whitespace-nowrap`,
           )}
-        >{`I'm a full-stack web developer.`}</div>
+        >{`I'm a Product Engineer.`}</div>
         <div className="mt-0 md:mt-2">
           <ParticleButton
             className="rounded-full shadow hover:cursor-pointer dark:bg-neutral-700 scale-70 sm:scale-85 md:scale-100 origin-left"

@@ -31,7 +31,7 @@ export default function Intro() {
       I build production-ready{" "}
       <GlimpseText
         text="web apps"
-        image="https://ik.imagekit.io/mrityunjay/interactiveWebApps.png"
+        image="https://ik.imagekit.io/mrityunjay/portfolio/products_ss"
         title="My Projects"
         description="A collection of projects I've worked on."
         href="/projects"

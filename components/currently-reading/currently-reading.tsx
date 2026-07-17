@@ -56,7 +56,7 @@ export default function CurrentlyReading() {
         <div className="flex gap-2.5 items-center">
           <div className="rounded shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] dark:shadow-[inset_0_2px_6px_rgba(255,255,255,0.15)] p-0.5 border dark:bg-neutral-800">
             <Image
-              src={"https://ik.imagekit.io/mrityunjay/book.jpg"}
+              src={"https://ik.imagekit.io/mrityunjay/portfolio/71YBG7M5WCL._SL1500_.jpg"}
               alt=""
               width={40}
               height={40}
@@ -90,7 +90,7 @@ export default function CurrentlyReading() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href="https://www.amazon.in/Courage-Be-Disliked-yourself-happiness/dp/1760630721?s=bazaar"
+                    href="https://www.amazon.in/Vegetarian-Han-Kang/dp/1846276039?s=bazaar"
                     target="_blank"
                   >
                     <h2
@@ -98,7 +98,7 @@ export default function CurrentlyReading() {
                         `${sans.className} text-[12.5px] md:text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:underline hover:text-orange-300 hover:cursor-pointer transition-all duration-200 `,
                       )}
                     >
-                      The Courage To be Disliked
+                      The Vegeterian 
                     </h2>
                   </Link>
                 </TooltipTrigger>
@@ -110,7 +110,7 @@ export default function CurrentlyReading() {
               <h2
                 className={cn(`${sans.className} text-xs text-neutral-400  `)}
               >
-                by Ichiro Kishimi and Fumitake Koga
+                by Han Kang
               </h2>
             </div>
           </div>
