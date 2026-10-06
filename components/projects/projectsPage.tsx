@@ -10,9 +10,123 @@ import {CursorClickIcon} from "../hover-icons/click";
 
 const PROJECT_DETAILS = [
   {
+    index: 0,
+    title: "YourBrain (B2C SaaS)",
+    description: "Solving data fragmentation by making your bookmarks actually useful.",
+    // sourceCode: "https://github.com/mrityunjay-tiwari/summarize",
+    liveDemo: "https://yourbrain.in/",
+    imagesArray: [
+      {
+        name: "Next.js",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/nextjs.png",
+      },
+      {
+        name: "TypeScript",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/typescript.svg?updatedAt=1778095120275",
+      },
+      {
+        name: "Shadcn/UI",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/shadcn.png?updatedAt=1769684949468",
+      },
+      {
+        name: "Vercel AI SDK",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/vercel-logo.png?updatedAt=1769763813364",
+      },
+      {
+        name: "FastAPI",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/fastapi%20logo.webp",
+      },
+      {
+        name: "PostgreSQL + pgvector",
+        image:
+          "https://ik.imagekit.io/mrityunjay/OT-integrations-logo-postgre-sql.png?updatedAt=1768855375158",
+      },
+      {
+        name: "Prisma",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/prisma-square.png?updatedAt=1769760876751",
+      },
+      {
+        name: "NextAuth",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/auth.js.png?updatedAt=1769758909591",
+      },
+      {
+        name: "Kotlin",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/Kotlin_(programming_language)-Logo.wine.png",
+      },
+    ],
+    slug: "yourbrain",
+    videoLink: "https://youtu.be/WX8QpJborDU?si=uiHcfCirFtzGaXrg",
+    thumbnailImage:
+      "https://ik.imagekit.io/mrityunjay/portfolio/yourbrainss"
+  },
+  {
     index: 1,
+
+    slug: "prepnova",
+    videoLink: "https://youtu.be/WX8QpJborDU",
+    thumbnailImage:
+      "https://ik.imagekit.io/mrityunjay/portfolio/prepnova.site?updatedAt=1778377471499",
+    title: "PrepNova",
+    // description: "AI-powered mock interviews with adaptive questioning, live feedback, structured reports, and long-term progress tracking.",
+    description: "AI Voice Agent for your real time mock interview with adaptive questioning.",
+    sourceCode: "https://github.com/mrityunjay-tiwari/interview-tool",
+    liveDemo: "https://prepnova.site/",
+    imagesArray: [
+      {
+        name: "Next.js",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/nextjs.png",
+      },
+      {
+        name: "TypeScript",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/typescript.svg?updatedAt=1778095120275",
+      },
+      {
+        name: "FastAPI",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/fastapi%20logo.webp",
+      },
+      {
+        name: "Stream",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/stream%20logo.png",
+      },
+      {
+        name: "PostgreSQL",
+        image:
+          "https://ik.imagekit.io/mrityunjay/OT-integrations-logo-postgre-sql.png?updatedAt=1768855375158",
+      },
+      {
+        name: "Prisma",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/prisma-square.png?updatedAt=1769760876751",
+      },
+      {
+        name: "MediaPipe",
+        image:
+          "https://ik.imagekit.io/mrityunjay/portfolio/mediapipe%20logo.png",
+      },
+      {
+        name: "NextAuth",
+        image:
+          "https://ik.imagekit.io/mrityunjay/TechStack/auth.js.png?updatedAt=1769758909591",
+      }
+    ],
+  },
+  {
+    index: 2,
     title: "DocuMind",
-    description: "Structured PDF intelligence platform for messy documents with semantic retrieval, flashcards, quizzes, and mind maps.",
+    // description: "Structured PDF intelligence platform for messy documents with semantic retrieval, flashcards, quizzes, and mind maps.",
+    description: "Structured PDF intelligence platform with production ready RAG pipeline.",
     sourceCode: "https://github.com/mrityunjay-tiwari/summarize",
     liveDemo: "https://documind.fun/",
     imagesArray: [
@@ -68,61 +182,31 @@ const PROJECT_DETAILS = [
       "https://ik.imagekit.io/mrityunjay/portfolio/documind.fun"
   },
   {
-    index: 2,
-
-    slug: "prepnova",
-    videoLink: "https://youtu.be/WX8QpJborDU",
+    index: 3,
+    slug: "ui-registry-mcp",
+    videoLink: "https://www.youtube.com/watch?v=QWyRladhs7U",
     thumbnailImage:
-      "https://ik.imagekit.io/mrityunjay/portfolio/prepnova.site?updatedAt=1778377471499",
-    title: "PrepNova",
-    description: "AI-powered mock interviews with adaptive questioning, live feedback, structured reports, and long-term progress tracking.",
-    sourceCode: "https://github.com/mrityunjay-tiwari/interview-tool",
-    liveDemo: "https://prepnova.site/",
+      "https://ik.imagekit.io/mrityunjay/portfolio/ui-registry-image",
+
+    title: "UI Registry MCP",
+    description: "Connect your Coding Agent with 13+ shadcn/ui libraries, building 10x faster.",
+    sourceCode: "https://github.com/mrityunjay-tiwari/ui-registry-mcp",
+    // liveDemo: "https://www.npmjs.com/package/medium-info-api",
     imagesArray: [
       {
-        name: "Next.js",
+        name: "Typescript",
         image:
-          "https://ik.imagekit.io/mrityunjay/portfolio/nextjs.png",
+          "https://ik.imagekit.io/mrityunjay/TechStack/Typescript.svg.png?updatedAt=1769859234226",
       },
       {
-        name: "TypeScript",
+        name: "MCP",
         image:
-          "https://ik.imagekit.io/mrityunjay/portfolio/typescript.svg?updatedAt=1778095120275",
+          "https://ik.imagekit.io/mrityunjay/portfolio/mcp-server-solid-sharp-512.webp",
       },
-      {
-        name: "FastAPI",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/fastapi%20logo.webp",
-      },
-      {
-        name: "Stream",
-        image:
-          "https://ik.imagekit.io/mrityunjay/portfolio/stream%20logo.png",
-      },
-      {
-        name: "PostgreSQL",
-        image:
-          "https://ik.imagekit.io/mrityunjay/OT-integrations-logo-postgre-sql.png?updatedAt=1768855375158",
-      },
-      {
-        name: "Prisma",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/prisma-square.png?updatedAt=1769760876751",
-      },
-      {
-        name: "MediaPipe",
-        image:
-          "https://ik.imagekit.io/mrityunjay/portfolio/mediapipe%20logo.png",
-      },
-      {
-        name: "NextAuth",
-        image:
-          "https://ik.imagekit.io/mrityunjay/TechStack/auth.js.png?updatedAt=1769758909591",
-      }
     ],
   },
   {
-    index: 3,
+    index: 4,
     slug: "medium-info-api",
     videoLink: "https://www.youtube.com/watch?v=QWyRladhs7U",
     thumbnailImage:
@@ -147,7 +231,7 @@ const PROJECT_DETAILS = [
     ],
   },
   {
-    index: 4,
+    index: 5,
     slug: "medium-embed-ui-library",
     videoLink: "https://www.youtube.com/watch?v=d8hvIdqWvqM",
     thumbnailImage:
@@ -176,16 +260,16 @@ const PROJECT_DETAILS = [
     ],
   },
   {
-    index: 8,
+    index: 6,
     slug: "portfolio",
     videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     thumbnailImage:
       "https://ik.imagekit.io/mrityunjay/projects%20thumbnail/portfolio.png?updatedAt=1769851057369",
     title: "Portfolio",
-    description: "This is the website you are currently on !",
-    optionalMessage: "This is only developed, not designed by me",
+    description: "You are already here :)",
+    // optionalMessage: "This is only developed, not designed by me",
     sourceCode: "https://github.com/mrityunjay-tiwari/mrityunjay.site",
-    liveDemo: "/",
+    liveDemo: "https://mrityunjay.site/",
     imagesArray: [
       {
         name: "Next.js",
@@ -253,7 +337,7 @@ export default function ProjectsPage() {
             `${sans.className} flex text-center text-neutral-500 dark:text-neutral-300`,
           )}
         >
-          all my works.
+          few selected works.
         </h2>
         {/* What other aspects exite me - Finance, Product and life in general. */}
       </div>
@@ -273,7 +357,7 @@ export default function ProjectsPage() {
                 liveDemo={project.liveDemo}
                 imagesArray={project.imagesArray}
                 slug={project.slug}
-                optionalMessage={project.optionalMessage}
+                // optionalMessage={project.optionalMessage}
               />
             ))}
           </div>

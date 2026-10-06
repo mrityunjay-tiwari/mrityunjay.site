@@ -23,9 +23,150 @@ const marker = Fraunces({
 
 export default function WorkExperience() {
   const [expanded, setExpanded] = useState(false);
+  const [expandedM, setExpandedM] = useState(false);
   return (
     <div id="work-experience" className="flex flex-col items-start justify-start mb-14">
       <SectionTitle subtitle="featured" title="experience." />
+
+      {/* Intern 1 @Mindcase */}
+      <div className="flex w-full items-center justify-between mt-5">
+        <motion.div
+          initial={{opacity: 0, y: 25}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, amount: 0.05}}
+          transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
+          className="flex gap-2.5 items-center"
+        >
+          <div className="rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)] dark:shadow-[inset_0_2px_4px_rgba(255,255,255,0.10)] p-1 border">
+            <Image
+              src={"https://ik.imagekit.io/mrityunjay/portfolio/mindcase_logo"}
+              alt=""
+              width={40}
+              height={40}
+              className="rounded-md hidden md:inline"
+            />
+            <Image
+              src={"https://ik.imagekit.io/mrityunjay/portfolio/mindcase_logo"}
+              alt=""
+              width={35}
+              height={35}
+              className="rounded inline md:hidden"
+            />
+          </div>
+          <div className="flex flex-col items-start">
+            <div className="flex gap-2 items-center">
+              <h2
+                className={cn(`${marker.className} text-lg text-neutral-600 dark:text-neutral-300`)}
+              >
+                Mindcase
+              </h2>
+              <div className="flex gap-1.5">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link href="https://mindcase.co/" target="_blank">
+                      <CiGlobe className="size-3 md:size-3.5 text-neutral-500 hover:text-neutral-700 hover:cursor-pointer dark:text-neutral-300" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Visit Website</p>
+                  </TooltipContent>
+                </Tooltip>
+                {/* <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link href="https://x.com/afiprotocol_xyz" target="_blank">
+                      <FaXTwitter className="size-3 md:size-3.5 text-neutral-500 hover:text-neutral-700 hover:cursor-pointer dark:text-neutral-300" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Follow on X</p>
+                  </TooltipContent>
+                </Tooltip> */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link href="https://www.linkedin.com/company/mindcase" target="_blank">
+                      <PiLinkedinLogoLight className="size-3 md:size-3.5 text-neutral-500 hover:text-neutral-700 hover:cursor-pointer dark:text-neutral-300" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Connect on LinkedIn</p>
+                  </TooltipContent>
+                </Tooltip>
+              </div>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div
+                    className="rounded-full p-0.5 bg-neutral-100 dark:bg-neutral-800"
+                    onClick={() => setExpanded((e) => !e)}
+                  >
+                    <ChevronDownIcon
+                      size={12}
+                      className={cn(
+                        "transition-transform duration-300",
+                        expanded && "rotate-180",
+                      )}
+                    />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{expanded ? "Collapse" : "Expand"}</p>
+                </TooltipContent>
+              </Tooltip>
+            </div>
+            <h2 className={cn(`${sans.className} text-xs text-neutral-500 dark:text-neutral-400 `)}>
+              Product Engineering Intern
+            </h2>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{opacity: 0, y: 25}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, amount: 0.05}}
+          transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
+          className="flex flex-col items-end"
+        >
+          <h2 className={cn(`${sans.className} text-xs md:text-sm text-neutral-500 dark:text-neutral-400`)}>
+            {`May'26 - July'26`}
+          </h2>
+          {/* <h2 className={cn(`${sans.className} text-xs md:text-sm text-neutral-500 dark:text-neutral-400`)}>
+            (Remote)
+          </h2> */}
+        </motion.div>
+      </div>
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.div
+            initial={{opacity: 0, height: 0}}
+            animate={{opacity: 1, height: "auto"}}
+            exit={{opacity: 0, height: 0}}
+            transition={{
+              duration: 0.35,
+              ease: [0.4, 0, 0.2, 1], // material-like easing
+            }}
+            className={cn(
+              `${sans.className} mt-5 text-neutral-500 text-sm pr-5 overflow-hidden `,
+            )}
+          >
+            <ul className="list-disc pl-4 space-y-2">
+              <li>
+                Shaped AI product strategy through JTBD-led discovery, technical product architecture, & data-driven product insights{" "}
+              </li>
+              <li>
+                Analyzed <span className="font-bold">~3 months</span> of <span className="font-bold">100K+</span> requests, improving requested-field coverage by <span className="font-bold">38%</span> by agent & schema optimization{" "}
+              </li>
+              <li>
+                Rationalized <span className="font-bold">100+</span> agents to <span className="font-bold">70</span> using utilization, overlap and demand analysis & shaped <span className="font-bold">MCP + Skills</span> architecture
+              </li>
+              <li>
+                Drove <span className="font-bold">2 product simplifications</span> & competitive decisions, contributing to <span className="font-bold">~25%</span> revenue growth & <span className="font-bold">9.5K+</span> new users
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
+
+       {/* Intern 2 @AFI */}
       <div className="flex w-full items-center justify-between mt-5">
         <motion.div
           initial={{opacity: 0, y: 25}}
@@ -93,19 +234,19 @@ export default function WorkExperience() {
                 <TooltipTrigger asChild>
                   <div
                     className="rounded-full p-0.5 bg-neutral-100 dark:bg-neutral-800"
-                    onClick={() => setExpanded((e) => !e)}
+                    onClick={() => setExpandedM((e) => !e)}
                   >
                     <ChevronDownIcon
                       size={12}
                       className={cn(
                         "transition-transform duration-300",
-                        expanded && "rotate-180",
+                        expandedM && "rotate-180",
                       )}
                     />
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{expanded ? "Collapse" : "Expand"}</p>
+                  <p>{expandedM ? "Collapse" : "Expand"}</p>
                 </TooltipContent>
               </Tooltip>
             </div>
@@ -122,15 +263,15 @@ export default function WorkExperience() {
           className="flex flex-col items-end"
         >
           <h2 className={cn(`${sans.className} text-xs md:text-sm text-neutral-500 dark:text-neutral-400`)}>
-            May 2025 - July 2025
+            {`May'25 - July'25`}
           </h2>
-          <h2 className={cn(`${sans.className} text-xs md:text-sm text-neutral-500 dark:text-neutral-400`)}>
+          {/* <h2 className={cn(`${sans.className} text-xs md:text-sm text-neutral-500 dark:text-neutral-400`)}>
             (Remote)
-          </h2>
+          </h2> */}
         </motion.div>
       </div>
       <AnimatePresence initial={false}>
-        {expanded && (
+        {expandedM && (
           <motion.div
             initial={{opacity: 0, height: 0}}
             animate={{opacity: 1, height: "auto"}}

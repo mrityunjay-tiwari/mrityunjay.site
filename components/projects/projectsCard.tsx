@@ -24,8 +24,8 @@ interface ProjectsCardProps {
   title: string;
   description?: string;
   imagesArray?: {name: string; image: string}[];
-  sourceCode: string;
-  liveDemo: string;
+  sourceCode?: string;
+  liveDemo?: string;
 
   slug: string;
   videoLink: string;
@@ -114,7 +114,7 @@ export default function ProjectsCard({
                 </h2>
 
                 <h2 className=" flex items-center gap-2 hover:underline dark:text-neutral-300 text-neutral-500">
-                  <Tooltip>
+                  {sourceCode && <Tooltip>
                     <TooltipTrigger asChild>
                       <Link href={sourceCode} target="_blank">
                         <VscGithubAlt />
@@ -123,8 +123,8 @@ export default function ProjectsCard({
                     <TooltipContent>
                       <p>Source Code</p>
                     </TooltipContent>
-                  </Tooltip>
-                  <Tooltip>
+                  </Tooltip>}
+                  {liveDemo && <Tooltip>
                     <TooltipTrigger asChild>
                       <Link href={liveDemo} target="_blank">
                         <CiGlobe />
@@ -133,8 +133,8 @@ export default function ProjectsCard({
                     <TooltipContent>
                       <p>View Website</p>
                     </TooltipContent>
-                  </Tooltip>
-                  <Tooltip>
+                  </Tooltip>}
+                  {/* <Tooltip>
                     <TooltipTrigger asChild>
                       <Link href={`/projects/${slug}`}>
                         <TbNotes className="text-neutral-400 h-4 w-4" />
@@ -143,7 +143,7 @@ export default function ProjectsCard({
                     <TooltipContent>
                       <p>See Details</p>
                     </TooltipContent>
-                  </Tooltip>
+                  </Tooltip> */}
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div onClick={generateSummary}>
@@ -177,9 +177,9 @@ export default function ProjectsCard({
               >
                 {optionalMessage}
               </h2>
-              <div className="flex flex-col w-full items-start">
+              <div className="flex flex-col w-full items-start -mt-2.5">
                 <h2
-                  className={`text-sm dark:text-neutral-300 font-medium text-neutral-400 ${sans.className}`}
+                  className={`text-sm dark:text-neutral-300 text-neutral-400 ${sans.className}`}
                 >
                   Stack:
                 </h2>

@@ -131,7 +131,7 @@ export default function CurrentlyReading() {
               </div>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{expanded ? "Generate Again" : "Get AI Summary"}</p>
+              <p>{expanded ? "Generate Again" : "Know what's this book about !"}</p>
             </TooltipContent>
           </Tooltip>
         </div>

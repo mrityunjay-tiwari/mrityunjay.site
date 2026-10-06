@@ -153,8 +153,8 @@ export function VideoDialogForProjectCard({
             playButtonHidden && "hidden group-hover:flex"
           )}
         >
-          <div className="bg-primary/10 flex size-24 items-center justify-center rounded-full backdrop-blur-md">
-            <Play className="size-8 text-white" />
+          <div className="bg-primary/10 flex size-16 items-center justify-center rounded-full backdrop-blur-md hover:cursor-pointer">
+            <Play className="size-5 text-white" />
           </div>
         </div>
       </button>

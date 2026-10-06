@@ -85,7 +85,7 @@ export default function Footer() {
         <div className="flex gap-1 items-center text-neutral-400 border-b-2 border-orange-100">
           <CircleDot className="md:size-3 size-2" absoluteStrokeWidth />
           <span className="text-xs md:text-base">
-            I am open to freelance work or full-time roles
+            Currently open for freelance work or full-time roles
           </span>
           <CircleDot className="md:size-3 size-2" absoluteStrokeWidth />
         </div>
