@@ -285,6 +285,9 @@ export default function WorkExperience() {
             )}
           >
             <ul className="list-disc pl-4 space-y-2">
+              <ul> <i>I worked on building a gamified DeFi risk platform with USD 1Bn+ AUM expertise.</i>
+                
+              </ul>
               <li>
                 Built gamified Web3 features & incentive systems for an
                 AI-powered DeFi risk platform with{" "}

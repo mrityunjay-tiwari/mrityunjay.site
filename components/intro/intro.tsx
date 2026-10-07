@@ -28,16 +28,16 @@ export default function Intro() {
         `${sans.className} mb-5 text-neutral-500 dark:text-neutral-300 md:text-lg leading-8`,
       )}
     >
-      I build production-ready{" "}
+      I build{" "}
       <GlimpseText
-        text="web apps"
+        text="products"
         image="https://ik.imagekit.io/mrityunjay/portfolio/products_ss"
-        title="My Projects"
+        title="My Products"
         description="A collection of projects I've worked on."
         href="/projects"
         target="_parent"
       />{" "}
-      with a focus on{" "}
+      that me & you would love to use. With a focus on{" "}
       <GlimpseText
         text="backend-first UX"
         image="https://ik.imagekit.io/mrityunjay/whatIsUX.png"
@@ -46,13 +46,14 @@ export default function Intro() {
         href="https://portfolio-283490989906.asia-south1.run.app/blogs/what-is-ux"
         target="_parent"
       />
-      . I love building products that solve real-world problems with an eye on
+      , I love building products that solve real-world problems with an eye on
       both engineering and{" "}
       <GlimpseText
         text="product thinking."
         image="https://ik.imagekit.io/mrityunjay/product-thinking.png"
-        title="My Intern as TechPM"
-        description="I worked on building a gamified DeFi risk platform with USD 1Bn+ AUM expertise."
+        title="My Intern as Product Engineer"
+        // description="I worked on building a gamified DeFi risk platform with USD 1Bn+ AUM expertise."
+        description="I worked on Agent first architecture & led product simplification adding 9.5k+ users."
         href="#work-experience"
         target="_parent"
       />
@@ -60,11 +61,10 @@ export default function Intro() {
         Currently, learning and building{" "}
         <GlimpseText
           text="AI Native applications."
-          image="https://ik.imagekit.io/mrityunjay/portfolio/documind.fun"
-          title="DocuMind"
-          description="It helps you unlock the full potential of your PDFs. 
-          It’s your smart companion that transforms static documents into interactive learning tools."
-          href="https://documind.fun/"
+          image="https://ik.imagekit.io/mrityunjay/portfolio/yourbrainss?updatedAt=1791296274548"
+          title="Your Brain"
+          description="Solving data fragmentation by leveraging the user behaviour of single tap bookmarking ."
+          href="https://yourbrain.in"
           target="_blank"
         />
       </div>
