@@ -21,6 +21,7 @@ import {getAllBlogPosts} from "./actions/contents";
 import Intro from "@/components/intro/intro";
 import {Container} from "@/components/layout/container";
 import Rays from "@/components/intro/rays";
+import WorkStack from "@/components/tech-stack/work-stack";
 
 export const dynamic = "force-dynamic";
 
@@ -33,7 +34,8 @@ export default async function Home() {
         <Rays />
         <Intro />
         <ContactWebsites />
-        <TechStack />
+        {/* <TechStack /> */}
+        {/* <WorkStack /> */}
         <CurrentlyReading />
         <WorkExperience />
         <Education />

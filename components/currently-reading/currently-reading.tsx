@@ -50,7 +50,7 @@ export default function CurrentlyReading() {
       whileInView={{opacity: 1, y: 0}}
       viewport={{once: true, amount: 0.05}}
       transition={{duration: 0.4, ease: [0.4, 0, 0.2, 1]}}
-      className=" p-2 md:p-3.5 flex flex-col items-start my-16 rounded-lg shadow-[inset_0_2px_6px_rgba(0,0,0,0.12)] dark:shadow-[inset_0_2px_6px_rgba(255,255,255,0.18)] dark:bg-neutral-950 border"
+      className=" p-2 md:p-3.5 flex flex-col items-start my-10 rounded-lg shadow-[inset_0_2px_6px_rgba(0,0,0,0.12)] dark:shadow-[inset_0_2px_6px_rgba(255,255,255,0.18)] dark:bg-neutral-950 border"
     >
       <div className="w-full flex items-center justify-between">
         <div className="flex gap-2.5 items-center">
